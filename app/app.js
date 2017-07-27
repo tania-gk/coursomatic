@@ -22,23 +22,22 @@ coursoramaApp.controller("MainCtrl", function ($scope, User, activeUser,Course,s
     console.log(activeUser.isLoggedIn());
 
     var fixedCourse = {
-        "id": "4",
-        "name": "Wednesday Morning",
-        "schedule": "10:00-13:30",
-        "dates": ["18-10-2017",
-            "25-10-2017",
-            "01-11-2017",
-            "08-11-2017",
-            "15-11-2017",
-            "22-11-2017",
-            "29-11-2017",
-            "06-12-2017",
-            "13-12-2017",
-            "20-12-2017",
-            "27-12-2017"],
-        "students": ["7", "8", "9", "10", "11"],
-        "alternativeStudents": []
-    };
+           "name":"Monday Morning",
+            "desc":"10:00-13:30",
+            "students":["1"],
+            "sessionsData": {
+                            "1001":{"date":"23-10-2017","added":[], "removed":[]},
+                            "1002":{"date":"30-10-2017","added":[], "removed":[]},
+                            "1003":{"date":"06-11-2017","added":[], "removed":[]},
+                            "1004":{"date":"13-11-2017","added":[], "removed":[]},
+                            "1005":{"date":"20-11-2017","added":[], "removed":[]},
+                            "1006":{"date":"27-11-2017","added":[], "removed":[]},
+                            "1007":{"date":"04-12-2017","added":[], "removed":[]},
+                            "1008":{"date":"11-12-2017","added":[], "removed":[]},
+                            "1009":{"date":"18-12-2017","added":[], "removed":[]},
+                            "1010":{"date":"25-12-2017","added":[], "removed":[]}
+                            }
+            }
     var course = new Course(fixedCourse);
     console.log(JSON.stringify(course));
 });

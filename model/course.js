@@ -1,13 +1,11 @@
 //service constructor
 coursoramaApp.factory("Course", function () {
     function Course(plainObject) {
-        this.id = plainObject.id;
-        this.name = plainObject.name;
-        this.schedule = plainObject.schedule;
-        this.dates = plainObject.dates;
-        this.students = plainObject.students;
-        this.alternativeStudents = plainObject.alternativeStudents;
-        this.maxStudents = 12;
+            this.name = plainObject.name;
+            this.desc = plainObject.desc;
+            this.dates = plainObject.dates;
+            this.students = plainObject.students;
+            this.sessionsData = plainObject.sessionsData;
     };
     return Course;
 });
@@ -28,7 +26,7 @@ coursoramaApp.factory("selectedCourse", function () {
         return course;
     };
 
-    var addToStudents = function (selectedCourse, student){
+ /*   var addToStudents = function (selectedCourse, student){
         if (selectedCourse.get().students.length < 12) {
             selectCourse.get().students.push(student);
         } else {
@@ -42,12 +40,12 @@ coursoramaApp.factory("selectedCourse", function () {
         } else {
             alarm("selectedCourse.get().name" + " is full");
         }
-    };
+    };*/
 
     return {
         isSelectedCourse: isSelectedCourse,
         selectCourse: selectCourse,
-        get: get,
-        addToStudents: addToStudents
+        get: get/*,
+        addToStudents: addToStudents*/
     };
 });
