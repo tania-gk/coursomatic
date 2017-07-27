@@ -1,37 +1,89 @@
-[
-    {
-        "courseId":"1",
-        "name":"Monday Morning",
-        "desc":"10:00-13:30",
-        "students":["1"],
-        "sessionsData":"data/sessions1.json"
+{
+    "001": {
+            "name":"Monday Morning",
+            "desc":"10:00-13:30",
+            "students":["1"],
+            "sessionsData": {
+                            "1001":{"date":"23-10-2017","added":[], "removed":[]},
+                            "1002":{"date":"30-10-2017","added":[], "removed":[]},
+                            "1003":{"date":"06-11-2017","added":[], "removed":[]},
+                            "1004":{"date":"13-11-2017","added":[], "removed":[]},
+                            "1005":{"date":"20-11-2017","added":[], "removed":[]},
+                            "1006":{"date":"27-11-2017","added":[], "removed":[]},
+                            "1007":{"date":"04-12-2017","added":[], "removed":[]},
+                            "1008":{"date":"11-12-2017","added":[], "removed":[]},
+                            "1009":{"date":"18-12-2017","added":[], "removed":[]},
+                            "1010":{"date":"25-12-2017","added":[], "removed":[]}
+                            }
+            },
+    "002": {
+            "name":"Monday Evening",
+            "desc":"17:45-21:15",
+            "students":["2","3"],
+            "sessionsData": {
+                            "2001":{"date":"23-10-2017","added":[], "removed":[]},
+                            "2002":{"date":"30-10-2017","added":[], "removed":[]},
+                            "2003":{"date":"06-11-2017","added":[], "removed":[]},
+                            "2004":{"date":"13-11-2017","added":[], "removed":[]},
+                            "2005":{"date":"20-11-2017","added":[], "removed":[]},
+                            "2006":{"date":"27-11-2017","added":[], "removed":[]},
+                            "2007":{"date":"04-12-2017","added":[], "removed":[]},
+                            "2008":{"date":"11-12-2017","added":[], "removed":[]},
+                            "2009":{"date":"18-12-2017","added":[], "removed":[]},
+                            "2010":{"date":"25-12-2017","added":[], "removed":[]}
+                            }
     },
-    {
-        "courseId":"2",
-        "name":"Monday Evening",
-        "desc":"17:45-21:15",
-        "students":["2","3"],
-        "sessionsData":"data/sessions2.json"
+    "003": {
+            "name":"Tuesday Morning",
+            "desc":"10:00-13:30",
+            "students":["4", "5", "6"],
+            "sessionsData": {
+                            "3001":{"date":"24-10-2017","added":[], "removed":[]},
+                            "3002":{"date":"31-10-2017","added":[], "removed":[]},
+                            "3003":{"date":"07-11-2017","added":[], "removed":[]},
+                            "3004":{"date":"14-11-2017","added":[], "removed":[]},
+                            "3005":{"date":"21-11-2017","added":[], "removed":[]},
+                            "3006":{"date":"28-11-2017","added":[], "removed":[]},
+                            "3007":{"date":"05-12-2017","added":[], "removed":[]},
+                            "3008":{"date":"12-12-2017","added":[], "removed":[]},
+                            "3009":{"date":"19-12-2017","added":[], "removed":[]},
+                            "3010":{"date":"26-12-2017","added":[], "removed":[]}
+                            }
     },
-    {
-        "courseId":"3",
-        "name":"Tuesday Morning",
-        "desc":"10:00-13:30",
-        "students":["4", "5", "6"],
-        "sessionsData":"data/sessions3.json"
+    "004": {
+            "name":"Wednesday Morning",
+            "desc":"10:00-13:30",
+            "students":["7", "8", "9", "10", "11"],
+            "sessionsData": {
+                            "4001":{"date":"18-10-2017","added":[], "removed":[]},
+                            "4002":{"date":"25-10-2017","added":[], "removed":[]},
+                            "4003":{"date":"01-11-2017","added":[], "removed":[]},
+                            "4004":{"date":"08-11-2017","added":[], "removed":[]},
+                            "4005":{"date":"15-11-2017","added":[], "removed":[]},
+                            "4006":{"date":"22-11-2017","added":[], "removed":[]},
+                            "4007":{"date":"29-11-2017","added":[], "removed":[]},
+                            "4008":{"date":"06-12-2017","added":[], "removed":[]},
+                            "4009":{"date":"13-12-2017","added":[], "removed":[]},
+                            "4010":{"date":"20-12-2017","added":[], "removed":[]},
+                            "4011":{"date":"27-12-2017","added":[], "removed":[]}
+                            }
     },
-    {
-        "courseId":"4",
-        "name":"Wednesday Morning",
-        "desc":"10:00-13:30",
-        "students":["7", "8", "9", "10", "11"],
-        "sessionsData":"data/sessions4.json"
-    },
-    {
-        "courseId":"5",
-        "name":"Thursday Morning",
-        "desc":"10:00-13:30",
-        "students":["12", "13"],
-        "sessionsData":"data/sessions5.json"
+    "005": {
+            "name":"Thursday Morning",
+            "desc":"10:00-13:30",
+            "students":["12", "13"],
+            "sessionsData": {
+                            "5001":{"date":"19-10-2017","added":[], "removed":[]},
+                            "5002":{"date":"26-10-2017","added":[], "removed":[]},
+                            "5003":{"date":"02-11-2017","added":[], "removed":[]},
+                            "5004":{"date":"09-11-2017","added":[], "removed":[]},
+                            "5005":{"date":"16-11-2017","added":[], "removed":[]},
+                            "5006":{"date":"23-11-2017","added":[], "removed":[]},
+                            "5007":{"date":"30-11-2017","added":[], "removed":[]},
+                            "5008":{"date":"07-12-2017","added":[], "removed":[]},
+                            "5009":{"date":"14-12-2017","added":[], "removed":[]},
+                            "5010":{"date":"21-12-2017","added":[], "removed":[]},
+                            "5011":{"date":"28-12-2017","added":[], "removed":[]}
+                            }
     }
-]
+}
