@@ -40,4 +40,9 @@ coursoramaApp.controller("MainCtrl", function ($scope, User, activeUser,Course,s
             }
     var course = new Course(fixedCourse);
     console.log(JSON.stringify(course));
+    selectedCourse.selectCourse(course);
+    selectedCourse.addStudentToCourse(course,myUser);
+    console.log(JSON.stringify(course));
+    selectedCourse.removeStudentFromCourse(course,myUser);
+    console.log(JSON.stringify(course));
 });

@@ -6,11 +6,12 @@ coursoramaApp.factory("Course", function () {
             this.dates = plainObject.dates;
             this.students = plainObject.students;
             this.sessionsData = plainObject.sessionsData;
+            this.maxStudents = "12";
     };
     return Course;
 });
 
- // Service that manges users
+ // Service that manages courses
 coursoramaApp.factory("selectedCourse", function () {
     var course = null;
 
@@ -26,26 +27,28 @@ coursoramaApp.factory("selectedCourse", function () {
         return course;
     };
 
- /*   var addToStudents = function (selectedCourse, student){
-        if (selectedCourse.get().students.length < 12) {
-            selectCourse.get().students.push(student);
+    var addStudentToCourse = function (selectedCourse, student){
+        if (selectedCourse.students.length < selectedCourse.maxStudents) {
+            selectedCourse.students.push(student.id);
         } else {
             alarm("selectedCourse.get().name" + " is full");
         }
     };
 
-    var addToStudents = function (selectedCourse, student){
-        if (selectedCourse.get().students.length < 12) {
-            selectCourse.get().students.push(student);
+    var removeStudentFromCourse = function (selectedCourse, student){
+        var index = selectedCourse.students.indexOf(student.id);
+        if (index != -1) {
+            selectedCourse.students.splice(index,1);
         } else {
-            alarm("selectedCourse.get().name" + " is full");
+            alarm("student.name" + " is not in registered to this course");
         }
-    };*/
+    };
 
     return {
         isSelectedCourse: isSelectedCourse,
         selectCourse: selectCourse,
-        get: get/*,
-        addToStudents: addToStudents*/
+        get: get,
+        addStudentToCourse: addStudentToCourse,
+        removeStudentFromCourse:removeStudentFromCourse
     };
 });
