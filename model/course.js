@@ -7,6 +7,7 @@ coursoramaApp.factory("Course", function () {
         this.dates = plainObject.dates;
         this.students = plainObject.students;
         this.alternativeStudents = plainObject.alternativeStudents;
+        this.maxStudents = 12;
     };
     return Course;
 });
@@ -27,9 +28,26 @@ coursoramaApp.factory("selectedCourse", function () {
         return course;
     };
 
+    var addToStudents = function (selectedCourse, student){
+        if (selectedCourse.get().students.length < 12) {
+            selectCourse.get().students.push(student);
+        } else {
+            alarm("selectedCourse.get().name" + " is full");
+        }
+    };
+
+    var addToStudents = function (selectedCourse, student){
+        if (selectedCourse.get().students.length < 12) {
+            selectCourse.get().students.push(student);
+        } else {
+            alarm("selectedCourse.get().name" + " is full");
+        }
+    };
+
     return {
         isSelectedCourse: isSelectedCourse,
         selectCourse: selectCourse,
-        get: get
+        get: get,
+        addToStudents: addToStudents
     };
 });
