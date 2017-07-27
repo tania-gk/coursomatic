@@ -36,7 +36,8 @@ coursoramaApp.controller("MainCtrl", function ($scope, User, activeUser,Course,s
                             "1008":{"date":"11-12-2017","added":[], "removed":[]},
                             "1009":{"date":"18-12-2017","added":[], "removed":[]},
                             "1010":{"date":"25-12-2017","added":[], "removed":[]}
-                            }
+                        },
+            "maxStudents" : "12"
             }
     var course = new Course(fixedCourse);
     console.log(JSON.stringify(course));
@@ -44,5 +45,9 @@ coursoramaApp.controller("MainCtrl", function ($scope, User, activeUser,Course,s
     selectedCourse.addStudentToCourse(course,myUser);
     console.log(JSON.stringify(course));
     selectedCourse.removeStudentFromCourse(course,myUser);
+    console.log(JSON.stringify(course));
+    selectedCourse.addStudentToSessionList(course,myUser,"1001");
+    console.log(JSON.stringify(course));
+    selectedCourse.removeStudentFromSessionList(course,myUser,"1001");
     console.log(JSON.stringify(course));
 });

@@ -6,7 +6,7 @@ coursoramaApp.factory("Course", function () {
             this.dates = plainObject.dates;
             this.students = plainObject.students;
             this.sessionsData = plainObject.sessionsData;
-            this.maxStudents = "12";
+            this.maxStudents = plainObject.maxStudents;
     };
     return Course;
 });
@@ -31,7 +31,7 @@ coursoramaApp.factory("selectedCourse", function () {
         if (selectedCourse.students.length < selectedCourse.maxStudents) {
             selectedCourse.students.push(student.id);
         } else {
-            alarm("selectedCourse.get().name" + " is full");
+            alert("selectedCourse.get().name" + " is full");
         }
     };
 
@@ -40,15 +40,39 @@ coursoramaApp.factory("selectedCourse", function () {
         if (index != -1) {
             selectedCourse.students.splice(index,1);
         } else {
-            alarm("student.name" + " is not in registered to this course");
+            alert("student.name" + " is not in registered to this course");
         }
     };
+
+    var addStudentToSessionList = function (selectedCourse, student, sessionId) {
+
+        if (selectedCourse.students.length < selectedCourse.maxStudents || 
+            (selectedCourse.students.length === selectedCourse.maxStudents 
+                &&  selectedCourse.sessionsData[sessionId].removed.length > 0 
+                && selectedCourse.sessionsData[sessionId].removed.length > selectedCourse.sessionsData[sessionId].added.length)) {
+                    selectedCourse.sessionsData[sessionId].added.push(student.id);
+        } else {
+            alert("There is no free spot in this session of " + selectedCourse.name);
+        }
+    };
+
+    var removeStudentFromSessionList = function (selectedCourse, student, sessionId) {
+
+        if (selectedCourse.students.indexOf(student.id) != -1) {
+                    selectedCourse.sessionsData[sessionId].removed.push(student.id);
+        } else {
+            alert(student.firstName + " is not registered to " + selectedCourse.name + " Course");
+        }
+    };
+
 
     return {
         isSelectedCourse: isSelectedCourse,
         selectCourse: selectCourse,
-        get: get,
+        get: get, 
         addStudentToCourse: addStudentToCourse,
-        removeStudentFromCourse:removeStudentFromCourse
+        removeStudentFromCourse: removeStudentFromCourse,
+        addStudentToSessionList: addStudentToSessionList,
+        removeStudentFromSessionList: removeStudentFromSessionList
     };
 });
