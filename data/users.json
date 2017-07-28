@@ -18,8 +18,8 @@
     "city":"Holon",
     "email":"michal.elmal@gmail.com",
     "password":"11111",
-    "type":"student"
-    "courseId":"1"
+    "type":"student",
+    "courseId":"001"
 },
 {
      "id":"2",
@@ -30,7 +30,7 @@
     "email":"zhoogi@gmail.com",
     "password":"11111",
     "type":"student",
-    "courseId":"2"
+    "courseId":"002"
 },
 {
     "id":"3",
@@ -39,9 +39,9 @@
     "phone":"0505774465",
     "city":"Holon",
     "email":"bsagiv@yahoo.com",
-    "password":"11111"
+    "password":"11111",
     "type":"student",
-    "courseId":"2"
+    "courseId":"002"
 },
 {
     "id":"4",
@@ -50,9 +50,9 @@
     "phone":"0543526178",
     "city":"Bat Yam",
     "email":"lorenm@yahoo.com",
-    "password":"11111"
+    "password":"11111",
     "type":"student",
-    "courseId":"3"
+    "courseId":"003"
 },
 {
     "id":"5",
@@ -61,9 +61,9 @@
     "phone":"0503980173",
     "city":"Rishon le Zion",
     "email":"e.t@gmail.com",
-    "password":"11111"
+    "password":"11111",
     "type":"student",
-    "courseId":"3"
+    "courseId":"003"
 },
 {
     "id":"6",
@@ -72,9 +72,9 @@
     "phone":"0523347685",
     "city":"Rishon le Zion",
     "email":"agur@gmail.com",
-    "password":"11111"
+    "password":"11111",
     "type":"student",
-    "courseId":"3"
+    "courseId":"003"
 },
 {
     "id":"7",
@@ -83,9 +83,9 @@
     "phone":"0548776543",
     "city":"Holon",
     "email":"tz@yahoo.com",
-    "password":"11111"
+    "password":"11111",
     "type":"student",
-    "courseId":"4"
+    "courseId":"004"
 },
 {
     "id":"8",
@@ -94,9 +94,9 @@
     "phone":"0521287651",
     "city":"Bat Yam",
     "email":"matan@yahoo.com",
-    "password":"11111"
+    "password":"11111",
     "type":"student",
-    "courseId":"4"
+    "courseId":"004"
 },
 {
     "id":"9",
@@ -105,9 +105,9 @@
     "phone":"0539870765",
     "city":"Rishon le Zion",
     "email":"baty@gmail.com",
-    "password":"11111"
+    "password":"11111",
     "type":"student",
-    "courseId":"5"
+    "courseId":"005"
 },
 {
     "id":"10",
@@ -116,9 +116,9 @@
     "phone":"0502348654",
     "city":"Holon",
     "email":"zahav@gmail.com",
-    "password":"11111"
+    "password":"11111",
     "type":"student",
-    "courseId":"5"
+    "courseId":"005"
 }
 {
     "id":"11",
@@ -127,9 +127,9 @@
     "phone":"0505774465",
     "city":"Holon",
     "email":"bsagiv@yahoo.com",
-    "password":"11111"
+    "password":"11111",
     "type":"student",
-    "courseId":"5"
+    "courseId":"005"
 }
 {
     "id":"12",
@@ -138,9 +138,9 @@
     "phone":"0535412876",
     "city":"Rishon le Zion",
     "email":"pnfa@gmail.com",
-    "password":"11111"
+    "password":"11111",
     "type":"student",
-    "courseId":"5"
+    "courseId":"005"
 }
 {
     "id":"13",
@@ -149,8 +149,8 @@
     "phone":"0509875322",
     "city":"Holon",
     "email":"lhz@gmail.com",
-    "password":"11111"
+    "password":"11111",
     "type":"student",
-    "courseId":"5"
+    "courseId":"005"
 }
 ]

@@ -1,5 +1,5 @@
 //service constructor
-coursoramaApp.factory("User", function () {
+coursomaticApp.factory("User", function () {
     function User(plainObject) {
         this.id = plainObject.id;
         this.firstName = plainObject.firstName;
@@ -9,13 +9,13 @@ coursoramaApp.factory("User", function () {
         this.email = plainObject.email;
         this.password = plainObject.password;
         this.type = plainObject.type;
-        this.course = plainObject.course;
+        this.courseId = plainObject.courseId;
     };
     return User;
 });
 
 // Service that manges users
-coursoramaApp.factory("activeUser", function () {
+coursomaticApp.factory("activeUser", function () {
     var user = null;
 
     var isLoggedIn = function () {

@@ -1,5 +1,5 @@
 //service constructor
-coursoramaApp.factory("Course", function () {
+coursomaticApp.factory("Course", function () {
     function Course(plainObject) {
             this.name = plainObject.name;
             this.desc = plainObject.desc;
@@ -12,7 +12,7 @@ coursoramaApp.factory("Course", function () {
 });
 
  // Service that manages courses
-coursoramaApp.factory("selectedCourse", function () {
+coursomaticApp.factory("selectedCourse", function () {
     var course = null;
 
     var isSelectedCourse = function () {
@@ -75,4 +75,8 @@ coursoramaApp.factory("selectedCourse", function () {
         addStudentToSessionList: addStudentToSessionList,
         removeStudentFromSessionList: removeStudentFromSessionList
     };
+});
+
+coursomaticApp.factory("newCourse", function () {
+    
 });

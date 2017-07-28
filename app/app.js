@@ -1,6 +1,30 @@
-var coursoramaApp = angular.module("coursoramaApp", ["ngRoute", "ngAnimate", "ui.bootstrap"]);
+var coursomaticApp = angular.module("coursomaticApp", ["ngRoute", "ngAnimate", "ui.bootstrap"]);
 
-coursoramaApp.controller("MainCtrl", function ($scope, User, activeUser,Course,selectedCourse) {
+
+ coursomaticApp.config(function ($routeProvider) {
+     $routeProvider
+         .when("/", {
+             templateUrl: "app/home/home.html",
+             controller: "HomeCtrl"
+         })
+        .when("/home",{
+            controller: "LoginCtrl"
+        })
+//         .when("/gallery", {
+//             templateUrl: "app/courses/galley.html",
+//             controller: "GalleryCtrl"
+//         })
+//         .when("/gallery/:recipeIndex", {
+//             templateUrl: "app/recipe/recipeDetails.html",
+//             controller: "RecipeDetailsCtrl"
+//         }).when("/new", {
+//             templateUrl: "app/recipe/newRecipe.html",
+//             controller: "NewRecipeCtrl"            
+//         })
+
+ });
+
+coursomaticApp.controller("MainCtrl", function ($scope, User, activeUser,Course,selectedCourse) {
     var fixedUser = {
         "id": "0",
         "firstName": "Sigal",
@@ -47,7 +71,5 @@ coursoramaApp.controller("MainCtrl", function ($scope, User, activeUser,Course,s
     selectedCourse.removeStudentFromCourse(course,myUser);
     console.log(JSON.stringify(course));
     selectedCourse.addStudentToSessionList(course,myUser,"1001");
-    console.log(JSON.stringify(course));
-    selectedCourse.removeStudentFromSessionList(course,myUser,"1001");
     console.log(JSON.stringify(course));
 });
