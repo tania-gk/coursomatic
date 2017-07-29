@@ -18,11 +18,6 @@ coursomaticApp.controller("LoginCtrl", function ($scope, $uibModalInstance, $htt
         } else {
             $scope.failedAttempt = true;
         }
-
-
-
-
-        //console.log($scope.email + " " + $scope.password)
     }
 
     var getLoggedInUser = function() {

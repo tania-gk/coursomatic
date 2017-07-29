@@ -14,10 +14,11 @@ var coursomaticApp = angular.module("coursomaticApp", ["ngRoute", "ngAnimate", "
              templateUrl: "model/gallery/gallery.html",
              controller: "GalleryCtrl"
          })
-//         .when("/gallery/:recipeIndex", {
-//             templateUrl: "app/recipe/recipeDetails.html",
-//             controller: "RecipeDetailsCtrl"
-//         }).when("/new", {
+         .when("/timeline", {
+             templateUrl: "model/timeline/timeline.html",
+             controller: "TimeLineCtrl"
+         })
+//            .when("/new", {
 //             templateUrl: "app/recipe/newRecipe.html",
 //             controller: "NewRecipeCtrl"            
 //         })
