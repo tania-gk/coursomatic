@@ -1,11 +1,14 @@
-
+.my-gallery {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #0C0A3E;
+    color:#F3C677;
+}
 .gallery-title
 {
-    font-size: 36px;
-    color: #42B32F;
+    font-size: 3em;
     text-align: center;
     font-weight: 500;
-    margin-bottom: 70px;
+    margin-bottom: 15px;
 }
 .gallery-title:after {
     content: "";
@@ -21,32 +24,43 @@
     border: 1px solid #42B32F;
     border-radius: 5px;
     text-align: center;
-    color: #42B32F;
     margin-bottom: 30px;
 
 }
 .filter-button:hover
 {
     font-size: 18px;
-    border: 1px solid #42B32F;
+    border: 1px solid #7B1E7A;
     border-radius: 5px;
     text-align: center;
     color: #ffffff;
-    background-color: #42B32F;
+    background-color: #7B1E7A;
 
 }
 .btn-default:active .filter-button:active
 {
-    background-color: #42B32F;
-    color: white;
+    background-color: #7B1E7A;
+    color: #F3C677;
 }
 
-.port-image
-{
-    width: 100%;
+.gallery-item{
+    width:200px;
+    height:200px;
+    margin:auto;
+}
+
+.well figcaption {
+    text-align: center;
+    color: #0C0A3E;
 }
 
 .gallery_product
 {
     margin-bottom: 30px;
+}
+
+.user-icon{
+    width:80px;
+    height:80px;
+    margin-bottom: 40px;
 }

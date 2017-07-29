@@ -8,7 +8,8 @@
     "email":"sigalyaron10@gmail.com",
     "password":"11111",
     "type":"teacher",
-    "courseId":"000"
+    "courseId":"000",
+    "clipartUrl":"birds/bird1.jpg"
 },
 {
     "id":"1",
@@ -19,7 +20,8 @@
     "email":"michal.elmal@gmail.com",
     "password":"11111",
     "type":"student",
-    "courseId":"001"
+    "courseId":"001",
+    "clipartUrl":"birds/bird2.jpg"
 },
 {
      "id":"2",
@@ -30,7 +32,8 @@
     "email":"zhoogi@gmail.com",
     "password":"11111",
     "type":"student",
-    "courseId":"002"
+    "courseId":"002",
+    "clipartUrl":"birds/bird3.jpg"
 },
 {
     "id":"3",
@@ -41,7 +44,8 @@
     "email":"bsagiv@yahoo.com",
     "password":"11111",
     "type":"student",
-    "courseId":"002"
+    "courseId":"002",
+    "clipartUrl":"birds/bird4.jpg"
 },
 {
     "id":"4",
@@ -52,7 +56,8 @@
     "email":"lorenm@yahoo.com",
     "password":"11111",
     "type":"student",
-    "courseId":"003"
+    "courseId":"003",
+    "clipartUrl":"birds/bird5.jpg"
 },
 {
     "id":"5",
@@ -63,7 +68,8 @@
     "email":"e.t@gmail.com",
     "password":"11111",
     "type":"student",
-    "courseId":"003"
+    "courseId":"003",
+    "clipartUrl":"birds/bird6.jpg"
 },
 {
     "id":"6",
@@ -74,7 +80,8 @@
     "email":"agur@gmail.com",
     "password":"11111",
     "type":"student",
-    "courseId":"003"
+    "courseId":"003",
+    "clipartUrl":"birds/bird7.jpg"
 },
 {
     "id":"7",
@@ -85,7 +92,8 @@
     "email":"tz@yahoo.com",
     "password":"11111",
     "type":"student",
-    "courseId":"004"
+    "courseId":"004",
+    "clipartUrl":"birds/owl1.jpg"
 },
 {
     "id":"8",
@@ -96,7 +104,8 @@
     "email":"matan@yahoo.com",
     "password":"11111",
     "type":"student",
-    "courseId":"004"
+    "courseId":"004",
+    "clipartUrl":"birds/owl2.jpg"
 },
 {
     "id":"9",
@@ -107,7 +116,8 @@
     "email":"baty@gmail.com",
     "password":"11111",
     "type":"student",
-    "courseId":"005"
+    "courseId":"005",
+    "clipartUrl":"birds/owl2.jpg"
 },
 {
     "id":"10",
@@ -118,7 +128,8 @@
     "email":"zahav@gmail.com",
     "password":"11111",
     "type":"student",
-    "courseId":"005"
+    "courseId":"005",
+    "clipartUrl":"birds/owl3.png"
 },
 {
     "id":"11",
@@ -129,7 +140,8 @@
     "email":"bsagiv@yahoo.com",
     "password":"11111",
     "type":"student",
-    "courseId":"005"
+    "courseId":"005",
+    "clipartUrl":"birds/owl4.jpg"
 },
 {
     "id":"12",
@@ -140,7 +152,8 @@
     "email":"pnfa@gmail.com",
     "password":"11111",
     "type":"student",
-    "courseId":"005"
+    "courseId":"005",
+    "clipartUrl":"birds/owl5.png"
 },
 {
     "id":"13",
@@ -151,6 +164,7 @@
     "email":"lhz@gmail.com",
     "password":"11111",
     "type":"student",
-    "courseId":"005"
+    "courseId":"005",
+    "clipartUrl":"birds/owl6.jpg"
 }
 ]

@@ -10,6 +10,7 @@ coursomaticApp.factory("User", function () {
         this.password = plainObject.password;
         this.type = plainObject.type;
         this.courseId = plainObject.courseId;
+        this.clipartUrl = plainObject.clipartUrl;
     };
     return User;
 });
