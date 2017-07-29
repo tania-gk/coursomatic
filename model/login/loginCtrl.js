@@ -14,7 +14,7 @@ coursomaticApp.controller("LoginCtrl", function ($scope, $uibModalInstance, $htt
         if (user != null) {
             activeUser.login(user);
             $uibModalInstance.close("Logged-in");
-            $location.path("/recipes")
+            $location.path("/gallery")
         } else {
             $scope.failedAttempt = true;
         }

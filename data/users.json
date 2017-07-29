@@ -8,7 +8,7 @@
     "email":"sigalyaron10@gmail.com",
     "password":"11111",
     "type":"teacher",
-    "courseId":""
+    "courseId":"000"
 },
 {
     "id":"1",
@@ -119,7 +119,7 @@
     "password":"11111",
     "type":"student",
     "courseId":"005"
-}
+},
 {
     "id":"11",
     "firstName":"Bella",
@@ -130,7 +130,7 @@
     "password":"11111",
     "type":"student",
     "courseId":"005"
-}
+},
 {
     "id":"12",
     "firstName":"Pnina",
@@ -141,7 +141,7 @@
     "password":"11111",
     "type":"student",
     "courseId":"005"
-}
+},
 {
     "id":"13",
     "firstName":"Lea",

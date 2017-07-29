@@ -1,17 +1,31 @@
+<div class="my-modal">
 <div class="modal-header">
-    <button type="button" class="close" aria-label="Close" ng-click="dismiss()">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    <h4 class="modal-title">Welcome </h4>
-</div>
-<div class="modal-body">
-    Modal Body
-</div>
-<div class="modal-footer">
-    <button class="btn btn-default" type="button" ng-click="dismiss()">
-        Cancel
-    </button>
-    <button class="btn btn-primary" type="button" ng-click="successCallback()">
-        Let me in
-    </button>
-</div>
+        <button type="button" class="close" aria-label="Close" ng-click="dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h3 class="logo">Coursomatic</h3>
+        <h3 class="modal-title">Start Managing Attendance</h3>
+    </div>
+    <div class="modal-body">
+        
+        <form action="" method="POST" class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="email" class="col-sm-2">Email:</label>
+                <input type="email" name="email" id="email" class="form-control col-sm-10" value="" required="required" ng-model="email">
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-2">Password:</label>
+                <input type="password" name="password" id="password" class="form-control col-sm-10" value="" required="required" ng-model="password">
+            </div>
+        </form>
+        
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" type="button" ng-click="dismiss()">
+            Cancel
+        </button>
+        <button class="btn btn-primary" type="button" ng-click="login()">
+            Let me in
+        </button>
+    </div>
+<div>

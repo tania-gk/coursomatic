@@ -10,10 +10,10 @@ var coursomaticApp = angular.module("coursomaticApp", ["ngRoute", "ngAnimate", "
         .when("/home",{
             controller: "LoginCtrl"
         })
-//         .when("/gallery", {
-//             templateUrl: "app/courses/galley.html",
-//             controller: "GalleryCtrl"
-//         })
+         .when("/gallery", {
+             templateUrl: "model/gallery/gallery.html",
+             controller: "GalleryCtrl"
+         })
 //         .when("/gallery/:recipeIndex", {
 //             templateUrl: "app/recipe/recipeDetails.html",
 //             controller: "RecipeDetailsCtrl"
@@ -46,7 +46,7 @@ coursomaticApp.controller("MainCtrl", function ($scope, User, activeUser,Course,
     console.log(activeUser.isLoggedIn());
 
     var fixedCourse = {
-           "name":"Monday Morning",
+                "name":"Monday Morning",
             "desc":"10:00-13:30",
             "students":["1"],
             "sessionsData": {
@@ -60,16 +60,18 @@ coursomaticApp.controller("MainCtrl", function ($scope, User, activeUser,Course,
                             "1008":{"date":"11-12-2017","added":[], "removed":[]},
                             "1009":{"date":"18-12-2017","added":[], "removed":[]},
                             "1010":{"date":"25-12-2017","added":[], "removed":[]}
-                        },
-            "maxStudents" : "12"
-            }
+                            },
+            "maxStudents":"12"
+        }
+
     var course = new Course(fixedCourse);
-    console.log(JSON.stringify(course));
-    selectedCourse.selectCourse(course);
-    selectedCourse.addStudentToCourse(course,myUser);
-    console.log(JSON.stringify(course));
-    selectedCourse.removeStudentFromCourse(course,myUser);
-    console.log(JSON.stringify(course));
-    selectedCourse.addStudentToSessionList(course,myUser,"1001");
-    console.log(JSON.stringify(course));
+//            console.log(fixedCourse);
+ //   console.log(JSON.stringify(fixedCourse));
+    // selectedCourse.selectCourse(course);
+    // selectedCourse.addStudentToCourse(course,myUser);
+     console.log(JSON.stringify(course));
+    // selectedCourse.removeStudentFromCourse(course,myUser);
+    // console.log(JSON.stringify(course));
+    // selectedCourse.addStudentToSessionList(course,myUser,"1001");
+    // console.log(JSON.stringify(course));
 });

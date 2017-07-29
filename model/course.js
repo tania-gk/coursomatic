@@ -1,5 +1,12 @@
 //service constructor
 coursomaticApp.factory("Course", function () {
+/*   function Course(plainObject) {
+       this.courses = JSON.parse(plainObject);
+       return Course;
+   };
+});   */
+   
+   
     function Course(plainObject) {
             this.name = plainObject.name;
             this.desc = plainObject.desc;

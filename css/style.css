@@ -1,9 +1,10 @@
 .logo {
     font-family: 'Pacifico', cursive;
+    color:#F3C677;
  }
 
 .jumbotron {
-    background-color: #86af49;
+    background-color: #0C0A3E;
 }
 
 #login-dp{
@@ -56,15 +57,16 @@
 
 .navbar{
     margin-bottom: 0;
+    color:#F3C677;
 }
 
 .navbar-default{
     font-size:1.5em;
-    background-color: #d5e1df;
-    color:#86af49;
+    background-color: #7B1E7A;
+    color:#F3C677;
 }
 .my-header {
-    color: #b5e7a0;
+    color: #F3C677;
 }
 
 .my-header h1 {
@@ -98,7 +100,7 @@
 	top: 10px;
 	background: black;
 	overflow: hidden;
-	border: solid 5px #d5e1df;
+	border: solid 5px #F3C677;
 }
 #carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
 #carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
@@ -129,10 +131,15 @@ img:hover{
 		transform: rotateY(360deg);
 	}
 }
-/* HEX: #d5e1df
+/* color palette
 
-HEX: #e3eaa7
+HEX: #0C0A3E darkest
 
-HEX: #b5e7a0
+HEX: #7B1E7A purpule
 
-HEX: #86af49 */
+HEX: #B33F62 pink
+
+HEX: #F9564F orange
+
+HEX: #F3C677 yellow
+*/
