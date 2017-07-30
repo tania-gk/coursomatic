@@ -1,0 +1,28 @@
+<div class="box">
+  <div class="mask"></div>
+  <div class="top">
+    <div class="menu but">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <div class="search but">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="time">
+    <span id="fulldate"></span>
+  </div>
+  <div class="middle">
+    <span id="hi">Hello {{activeUser.name}}</span>
+    <div class="timeline">
+  <div class="list-group">
+      <a href="#" class="list-group-item" ng-repeat="session in selectedCourse.sessionsData">
+        <h4 class="list-group-item-heading">{{session.date}}</h4>
+      </a>
+    </div>
+  <div class="bottom">
+    <button id="done"><i class="fa fa-check" aria-hidden="true"></i></button>
+    <button id="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+    <button id="plus"><i class="fa fa-plus" aria-hidden="true"></i></button>
+  </div>
+</div>
+  </div>

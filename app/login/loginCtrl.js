@@ -32,4 +32,4 @@ coursomaticApp.controller("LoginCtrl", function ($scope, $uibModalInstance, $htt
     $scope.dismiss = function () {
         $uibModalInstance.close("User dismissed");
     }
-});
+ });

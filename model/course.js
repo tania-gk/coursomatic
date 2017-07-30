@@ -1,25 +1,31 @@
 //service constructor
-coursomaticApp.factory("Course", function () {
-/*   function Course(plainObject) {
-       this.courses = JSON.parse(plainObject);
-       return Course;
-   };
-});   */
-   
-   
-    function Course(plainObject) {
+coursomaticApp.factory("Course", function (Session) {
+    function Course(plainObject, index) {
+            this.id = index;
             this.name = plainObject.name;
             this.desc = plainObject.desc;
             this.dates = plainObject.dates;
             this.students = plainObject.students;
-            this.sessionsData = plainObject.sessionsData;
+            this.sessionsData = getSessions(plainObject.sessionsData);
+            this.courseUrl = plainObject.courseUrl;
             this.maxStudents = plainObject.maxStudents;
     };
+
+    getSessions = function (plainObject) {
+        var sessions = [];
+        var sessionsIndex = Object.keys(plainObject);
+        for (var i = 0; i < sessionsIndex.length; i++) {
+           sessions.push(new Session(plainObject[sessionsIndex[i]],sessionsIndex[i]));
+        }
+       return sessions;
+    }
     return Course;
 });
 
+
+
  // Service that manages courses
-coursomaticApp.factory("selectedCourse", function () {
+coursomaticApp.factory("selectedCourse", function (activeUser) {
     var course = null;
 
     var isSelectedCourse = function () {
@@ -84,6 +90,43 @@ coursomaticApp.factory("selectedCourse", function () {
     };
 });
 
-coursomaticApp.factory("newCourse", function () {
+coursomaticApp.factory("Courses", function (course) {
+    var coursesList = [];
+
+    var add = function (course) {
+        coursesList.push(course);
+    }
+
+    var getAll = function() {
+        return coursesList;
+    }
+
+    var get = function(index) {
+        for (var i=0; i < coursesList.length; i++) {
+            if (coursesList[i].id === index) {
+                return coursesList[i];
+            }
+        }
+        return null;
+    }
+
+    var remove = function(course) {
+        for (var i=0; i < coursesList.length; i++) {
+            if (coursesList[i].id === index) {
+                coursesList.splice(i,1);
+            }
+        }
+    }
+
+    var showUserCourses = function(activeUser) {
+
+    }
+
+    return {
+        add : add,
+        get : get,
+        getAll : getAll,
+        remove : remove
+    }
     
 });
