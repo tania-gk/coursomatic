@@ -22,6 +22,8 @@ var coursomaticApp = angular.module("coursomaticApp", ["ngRoute", "ngAnimate", "
  });
 
 coursomaticApp.controller("MainCtrl", function ($scope, User, activeUser,Course,selectedCourse) {
+/*    $scope.greetName = activeUser.get().firstName;*/
+
     $scope.isLoggedIn = function() {
         return activeUser.isLoggedIn();
     };

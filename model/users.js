@@ -47,3 +47,36 @@ coursomaticApp.factory("activeUser", function () {
         get: get
     };
 });
+
+coursomaticApp.factory("Users", function () {
+    var usersArr = [];
+
+    var addUser = function (user){
+        usersArr.push(user);
+    };
+
+    var updateUser = function (index, user) {
+        usersArr[index] = user;
+    }
+
+    var removeUser = function (index) {
+        usersArr.splice(index,1);
+    }
+    var getAllUsers = function() {
+        return usersArr;
+    }
+
+    var get = function(index) {
+        return usersArr[index];
+    }
+
+
+    return {
+        addUser: addUser,
+        updateUser: updateUser,
+        removeUser: removeUser,
+        getAllUsers: getAllUsers,
+        get: get,
+     }
+});
+

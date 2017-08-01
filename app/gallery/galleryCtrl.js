@@ -1,22 +1,17 @@
-coursomaticApp.controller("GalleryCtrl", function ($scope, $http, $location, User,Course, activeUser, Session, allSessions) {
+coursomaticApp.controller("GalleryCtrl", function ($scope, $http, $location,Course, Courses, activeUser, allSessions) {
     $http.get("data/courses.json").then(function (response) {
-        $scope.courses = [];
         var coursesIndex = Object.keys(response.data);
-        for (var i = 0; i < coursesIndex.length; i++) {
-           $scope.courses.push(new Course(response.data[coursesIndex[i]],coursesIndex[i]));
+        if (Courses.getAll().length === 0) {
+            for (var i = 0; i < coursesIndex.length; i++) {
+            Courses.add(new Course(response.data[coursesIndex[i]],coursesIndex[i]));
+            }
         }
-        console.log($scope.courses);
-   }
+    }); 
+
+    $scope.courses = Courses.getAll();
     
-    );
-
-   $scope.sessionsArr = function() {
-       return allSessions.getAllSessionsArr();
-    };
-
-    $scope.getUser = function () {
-        console.log(activeUser.get());
-        return activeUser.get();
-    };
+    $scope.allSessionsArr = allSessions.getAllSessionsArr();
+ 
+    $scope.loggedUser = activeUser.get();
 });
 

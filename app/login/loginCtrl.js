@@ -1,9 +1,10 @@
-coursomaticApp.controller("LoginCtrl", function ($scope, $uibModalInstance, $http, $location, activeUser, User) {
+coursomaticApp.controller("LoginCtrl", function ($scope, $uibModalInstance, $http, $location, activeUser, User,Users) {
 
     $http.get("data/users.json").then(function (response) {
-        $scope.users = [];
-        for (var i = 0; i < response.data.length; i++) {
-            $scope.users.push(new User(response.data[i]));
+        if (Users.getAllUsers().length === 0) {
+            for (var i = 0; i < response.data.length; i++) {
+                Users.addUser(new User(response.data[i]));
+            }
         }
     });
 
@@ -16,14 +17,16 @@ coursomaticApp.controller("LoginCtrl", function ($scope, $uibModalInstance, $htt
             $uibModalInstance.close("Logged-in");
             $location.path("/gallery")
         } else {
+            console.log(JSON.stringify(user));
             $scope.failedAttempt = true;
         }
     }
 
     var getLoggedInUser = function() {
-        for (var i = 0; i < $scope.users.length; i++) {
-            if ($scope.users[i].email === $scope.email && $scope.users[i].password === $scope.password) {
-                return $scope.users[i];
+        var usersArr = Users.getAllUsers();
+        for (var i = 0; i < usersArr.length; i++) {
+            if (usersArr[i].email === $scope.email && usersArr[i].password === $scope.password) {
+                return usersArr[i];
             }
         }
         return null;
