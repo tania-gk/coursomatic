@@ -90,7 +90,7 @@ coursomaticApp.factory("selectedCourse", function (activeUser) {
     };
 });
 
-coursomaticApp.factory("Courses", function (course) {
+coursomaticApp.factory("Courses", function (Course) {
     var coursesList = [];
 
     var add = function (course) {

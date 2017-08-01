@@ -14,17 +14,27 @@ var coursomaticApp = angular.module("coursomaticApp", ["ngRoute", "ngAnimate", "
              templateUrl: "app/gallery/gallery.html",
              controller: "GalleryCtrl"
          })
-         .when("/timeline", {
-             templateUrl: "app/timeline/timeline.html",
-             controller: "TimeLineCtrl"
+            .when("/newUser", {
+             templateUrl: "app/newUser/newUser.html",
+             controller: "NewUserCtrl"            
          })
-//            .when("/new", {
-//             templateUrl: "app/recipe/newRecipe.html",
-//             controller: "NewRecipeCtrl"            
-//         })
 
  });
 
 coursomaticApp.controller("MainCtrl", function ($scope, User, activeUser,Course,selectedCourse) {
+    $scope.isLoggedIn = function() {
+        return activeUser.isLoggedIn();
+    };
 
+    $scope.isTeacher = function() {
+        return activeUser.isTeacher();
+    };
+
+    $scope.logout = function() {
+        return activeUser.logout();
+    };
+
+    $scope.userName = function() {
+        return activeUser.get().firstName + " " + activeUser.get().lastName;
+    }
 });

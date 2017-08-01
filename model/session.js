@@ -1,4 +1,4 @@
-coursomaticApp.factory("Session", function () {
+coursomaticApp.factory("Session", function (User) {
   function Session(plainObject,index) {     
             this.id = index;
             this.date = plainObject.date;
@@ -8,22 +8,22 @@ coursomaticApp.factory("Session", function () {
     return Session;
 });
 
-coursomaticApp.factory("AllSessions",function(Courses){
-  var getAllSessionsArr = function (allCourses){
-    var coursesArr = Courses.getAll();
-    var j=0;
-    var k=0;
+coursomaticApp.factory("allSessions",function(User, Course, Courses, Session){
+    var getAllSessionsArr = function (){
+      var coursesArr = Courses.getAll();
+      var j=0;
+      var k=0;
 
-    var allSessions = [];
-    for (var i=0; i< coursesArr.length; i++ ){
-      for (var j=0; j< coursesArr[i].sessionsData.length ; j++){
-        allSessions[k+1] = coursesArr[i].sessionsData[j];
+      var allSessions = [];
+      for (var i=0; i< coursesArr.length; i++ ){
+        for (var j=0; j< coursesArr[i].sessionsData.length ; j++){
+          allSessions[k+1] = coursesArr[i].sessionsData[j];
+        }
       }
-    }
-    return allSessions;
+      return allSessions;
   }
 
   return {
-    getAllSessionsArr:getAllSessionsArr
+    getAllSessionsArr : getAllSessionsArr
   }
 });

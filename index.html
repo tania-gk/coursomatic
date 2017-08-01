@@ -32,66 +32,39 @@
     <script src="app/home/homeCtrl.js"></script>
     <script src="app/login/loginCtrl.js"></script>
     <script src="app/gallery/galleryCtrl.js"></script>
-    <script src="app/timeline/timelineCtrl.js"></script>
+    <script src="app/newUser/newUserCtrl.js"></script>
     <link href="css/style.css" rel="stylesheet">
     <link href="app/login/login.css" rel="stylesheet">
     <link href="app/gallery/gallery.css" rel="stylesheet">
-    <link href="app/timeline/timeline.css" rel="stylesheet">
+    <link href="app/newUser/newUser.css" rel="stylesheet">
 </head>
 
 <body ng-controller="MainCtrl">
- <!--  
-   <nav class="navbar navbar-default navbar-static-top" role="navigation">
-       <a class="navbar-brand logo" href="#">Coursomatic</a>
-       <ul class="nav navbar-nav pull-right">
-           <li class="">
-               <a class="login-button" href="#">Login</a>
-           </li>
-       </ul>
-   </nav> 
-<nav class="navbar navbar-default navbar-inverse navbar-static-top" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display 
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand logo" href="#">Coursomatic</a>
-    </div>
+    <nav class="navbar navbar-default my-navbar" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#!/">Coursorama</a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li ng-show="isLoggedIn() && isTeacher()"><a href="#!/newStudent">New Student</a></li>
+                <li ng-show="isLoggedIn()"><a href="#!/userProfile">My Profile </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-hide="isLoggedIn()"><a href="#" ng-click="">Login</a></li>
+                <li ng-show="isLoggedIn()"><a href="#" ng-click="logout()">Logout</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
 
-    <!-- Collect the nav links, forms, and other content for toggling 
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-			<ul id="login-dp" class="dropdown-menu">
-				<li>
-					 <div class="row">
-							<div class="col-md-12">
-								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-										<div class="form-group">
-											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
-											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-										</div>
-										<div class="form-group">
-											 <label class="sr-only" for="exampleInputPassword2">Password</label>
-											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-										</div>
-										<div class="form-group">
-											 <button type="submit" class="btn btn-primary btn-block">Let me in</button>
-										</div>
-								 </form>
-							</div>
-					 </div>
-				</li>
-			</ul>
-        </li>
-      </ul>
-  </div><!-- /.container-fluid 
-</nav>
--->
 
 <ng-view></ng-view> 
 </body>

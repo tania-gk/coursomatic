@@ -4,7 +4,8 @@
 
 body{
    font-family: 'Quicksand', sans-serif;
- /*   background-color: #0C0A3E;*/
+    background: linear-gradient(to bottom right, #4F84C4,#F3D6E4);
+    color:#223A5E;
 }
 
 .my-background {
@@ -24,19 +25,26 @@ h1{
     margin: auto;
     width:300px;
 }
+.my-navbar{
+   background: linear-gradient(to right,  #4F84C4,#F3D6E4);        
+}
 
 .navbar{
     margin-bottom: 0;
-    color:#F3C677;
+    border:none;
 }
 
 .navbar-default{
     font-size:1.5em;
-    background-color: #7B1E7A;
-    color:#F3C677;
 }
-.my-header {
-    color: #F3C677;
+
+.navbar-default .navbar-brand, 
+.navbar-default .navbar-nav>li>a {
+   color: #223A5E;;      
+}
+
+.navbar-header>a {
+    font-family: 'Pacifico', cursive;
 }
 
 h1.logo {

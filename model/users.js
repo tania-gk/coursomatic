@@ -23,6 +23,10 @@ coursomaticApp.factory("activeUser", function () {
         return user ? true : false;
     };
 
+    var isTeacher = function (){
+        return (user.type === "teacher");
+    }
+
     var login = function (loggedInUser) {
         user = loggedInUser;
     };
@@ -37,6 +41,7 @@ coursomaticApp.factory("activeUser", function () {
 
     return {
         isLoggedIn: isLoggedIn,
+        isTeacher: isTeacher,
         login: login,
         logout: logout,
         get: get
