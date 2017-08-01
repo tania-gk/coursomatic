@@ -1,4 +1,4 @@
-coursomaticApp.controller("GalleryCtrl", function ($scope, $http, $location, Course, activeUser) {
+coursomaticApp.controller("GalleryCtrl", function ($scope, $http, $location, Course) {
     $http.get("data/courses.json").then(function (response) {
         $scope.courses = [];
         var coursesIndex = Object.keys(response.data);
@@ -7,10 +7,16 @@ coursomaticApp.controller("GalleryCtrl", function ($scope, $http, $location, Cou
         }
         console.log($scope.courses);
    }
-);
-
+    
+    );
+/*
+   $scope.sessionsArr = function() {
+       return AllSessions.getAllSessionsArr();
+    };
+*/
    $scope.toTimeline = function() {
         $location.path("/timeline");
     }
 
 });
+

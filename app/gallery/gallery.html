@@ -1,22 +1,77 @@
-<div class="my-gallery">
-    
-    <div class="container">
-        <div class="row ">
-        <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h1 class="gallery-title">Let's start - choose a course</h1>
+<div class="attendance-galery">
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+  
+  <div class="list-group menu" ng-repeat="course in courses">
+    <a href="#" class="list-group-item course-item">
+        <div class="course-image">
+            <img src="{{course.courseUrl}}" class="img-circle"/>
+        </div>  
+      <div class="course-title">    
+      <h4>{{course.name}}</h4>
+      <p>{{course.desc}}</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="panel panel-default event col-xs-9 col-sm-9 col-md-9 col-lg-9">
+    <div class="panel-body">
+      <div class="rsvp col-xs-2 col-sm-2">
+        <i>23</i>
+        <i>oct</i>
+        <div class="hidden-xs">
+          <span class="fa fa-thumbs-up fa-2x"></span>
+          <span class="fa fa-thumbs-down fa-2x"></span>
         </div>
- <!--      <div align="center">
-            <button class="btn btn-default filter-button">All</button>
-            <button class="btn btn-default filter-button">Your Courses</button>
-            <button class="btn btn-default filter-button">Other Courses</button>
-        </div> -->
-        <br/>
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 {{course.id}}" ng-repeat="course in courses | filter:filterByCourseId()">
-               <div class="well" >
-                <img src="{{course.courseUrl}}" class="img-responsive gallery-item" ng-click="toTimeline()">
-                <figcaption>{{course.name}}  {{course.desc}}</figcaption>
-                </div>             
+      </div>
+      <div class="info col-xs-8 col-sm-7">
+        Monday Morning
+<!--        <div class="visible-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elitero..</div>-->
+        <div class="hidden-xs">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#location" aria-controls="location" role="tab" data-toggle="tab">Schedule</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="location"> 10:00 - 13:30</div>
             </div>
-        </div>
+          </div>
+      </div>
+      <div class="author col-xs-2 col-sm-3">
+          <div class="profile-image">
+              <img src="pics/Mon1.jpg"/>
+          </div>      
+      </div>
     </div>
+</div>
+  <div class="panel panel-default event col-xs-9 col-sm-9 col-md-9 col-lg-9">
+    <div class="panel-body">
+      <div class="rsvp col-xs-2 col-sm-2">
+        <i>30</i>
+        <i>Oct</i>
+        <div class="hidden-xs">
+          <span class="fa fa-thumbs-up fa-2x"></span>
+          <span class="fa fa-thumbs-down fa-2x"></span>
+        </div>
+      </div>
+      <div class="info col-xs-8 col-sm-7">
+        Monday Morning
+        <div class="visible-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elitero..</div>
+        <div class="hidden-xs">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#location" aria-controls="location" role="tab" data-toggle="tab">Schedule</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="location"> 10:00 - 13:30</div>
+            </div>
+          </div>
+      </div>
+      <div class="author col-xs-2 col-sm-3">
+          <div class="profile-image">
+              <img src="pics/Mon1.jpg"/>
+          </div>      
+      </div>
+    </div>
+</div>
 </div>

@@ -15,7 +15,7 @@
                             "1009":{"date":"18-12-2017","added":[], "removed":[]},
                             "1010":{"date":"25-12-2017","added":[], "removed":[]}
                             },
-            "courseUrl": "../../pics/Mon1.jpg",
+            "courseUrl": "pics/Mon1.jpg",
             "maxStudents":"12"
             },
     "002": {
@@ -34,7 +34,7 @@
                             "2009":{"date":"18-12-2017","added":[], "removed":[]},
                             "2010":{"date":"25-12-2017","added":[], "removed":[]}
                             },
-            "courseUrl": "../../pics/Mon2.jpg",
+            "courseUrl": "pics/Mon2.jpg",
             "maxStudents":"12"
     },
     "003": {
@@ -53,7 +53,7 @@
                             "3009":{"date":"19-12-2017","added":[], "removed":[]},
                             "3010":{"date":"26-12-2017","added":[], "removed":[]}
                             },
-            "courseUrl": "../../pics/Tue.jpg",
+            "courseUrl": "pics/Tue.jpg",
             "maxStudents":"12"
            },
     "004": {
@@ -73,7 +73,7 @@
                             "4010":{"date":"20-12-2017","added":[], "removed":[]},
                             "4011":{"date":"27-12-2017","added":[], "removed":[]}
                             },
-            "courseUrl": "../../pics/Wed.jpg",
+            "courseUrl": "pics/Wed.jpg",
             "maxStudents":"12"
     },
     "005": {
@@ -93,7 +93,7 @@
                             "5010":{"date":"21-12-2017","added":[], "removed":[]},
                             "5011":{"date":"28-12-2017","added":[], "removed":[]}
                             },
-            "courseUrl": "../../pics/Thu.jpg",
+            "courseUrl": "pics/Thu.jpg",
             "maxStudents":"12"
     }
 }
