@@ -15,7 +15,7 @@ coursomaticApp.factory("Course", function (Session) {
         var sessions = [];
         var sessionsIndex = Object.keys(plainObject);
         for (var i = 0; i < sessionsIndex.length; i++) {
-           sessions.push(new Session(plainObject[sessionsIndex[i]],sessionsIndex[i]));
+           sessions.push(new Session(plainObject[sessionsIndex[i]],sessionsIndex[i],plainObject.id));
         }
        return sessions;
     }
