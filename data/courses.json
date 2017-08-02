@@ -2,7 +2,7 @@
     "001": {
             "name":"Monday Morning",
             "desc":"10:00-13:30",
-            "students":["1"],
+            "students":["1","2","3"],
             "sessionsData": {
                             "1001":{"date":"23-10-2017","added":[], "removed":[]},
                             "1002":{"date":"30-10-2017","added":[], "removed":[]},

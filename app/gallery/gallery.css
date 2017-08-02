@@ -168,6 +168,11 @@
 }
 */
 /* gallery css*/
+.gallery-btns.col-sm-12 {
+  display:block;
+  margin:auto;
+  font-size: 1.5em;
+}
 
 .menu{
   color:#0C0A3E;
@@ -190,8 +195,8 @@
   left: 6%;
   background:#F3D6E4;
   border: 3px solid #4F84C4;
-  width:80px;
-  height:80px;
+  width:60px;
+  height:60px;
 }
 
 .course-title{
@@ -212,6 +217,30 @@ a.list-group-item {
 .list-group-item:last-child {
     border-radius: 50px 15px 30px 15px;
 }
+
+.event {
+  background: transparent;
+  border-radius: 15px 50px 15px 30px;
+}
+
+.event .rsvp i {
+  font-size: 2em;
+  display: block;
+  position:relative;
+  top:17%;
+  margin-bottom:5px;
+  color:#0C0A3E;
+}
+
+.event .info{
+  font-size: 28px;
+  color: #0C0A3E;
+}
+
+.event .info > div, .event .info > ul{
+  font-size: 12px;
+}
+
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
     .event .profile {

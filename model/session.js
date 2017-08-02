@@ -1,13 +1,15 @@
-coursomaticApp.factory("Session", function (User) {
-  function Session(plainObject,index, courseId) { 
-            this.courseId = courseId;    
+coursomaticApp.factory("Session", function (Users) {
+  function Session(plainObject,index, courseObj) { 
+            this.name = courseObj.name; 
             this.id = index;
             this.date = plainObject.date;
             this.added = plainObject.added;
             this.removed = plainObject.removed;
     };
+
     return Session;
 });
+
 
 coursomaticApp.factory("allSessions",function(Course, Courses, Session){
     var getAllSessionsArr = function (){
@@ -24,18 +26,9 @@ coursomaticApp.factory("allSessions",function(Course, Courses, Session){
       return allSessions;
   }
 
-  /* check this code!! */
-  var getCourseName = function (session){
-    var coursesArr = Courses.getAll();
-      for (var i=0; i<coursesArr.length; i++ ){
-        if (session.courseId === coursesArr[i].courseId){
-          return coursesArr[i].name;
-        }
-      }
-  }
+  
 
   return {
     getAllSessionsArr : getAllSessionsArr,
-    getCourseName : getCourseName
   }
 });

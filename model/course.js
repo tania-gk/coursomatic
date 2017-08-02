@@ -6,21 +6,22 @@ coursomaticApp.factory("Course", function (Session) {
             this.desc = plainObject.desc;
             this.dates = plainObject.dates;
             this.students = plainObject.students;
-            this.sessionsData = getSessions(plainObject.sessionsData);
+            this.sessionsData = getSessions(plainObject.sessionsData, plainObject.name);
             this.courseUrl = plainObject.courseUrl;
             this.maxStudents = plainObject.maxStudents;
     };
 
-    getSessions = function (plainObject) {
+    getSessions = function (plainObject, courseName) {
         var sessions = [];
         var sessionsIndex = Object.keys(plainObject);
         for (var i = 0; i < sessionsIndex.length; i++) {
-           sessions.push(new Session(plainObject[sessionsIndex[i]],sessionsIndex[i],plainObject.id));
+           sessions.push(new Session(plainObject[sessionsIndex[i]],sessionsIndex[i],courseName));
         }
        return sessions;
-    }
+    };
+
     return Course;
-});
+ });
 
 
 
@@ -92,6 +93,7 @@ coursomaticApp.factory("selectedCourse", function (activeUser) {
 
 coursomaticApp.factory("Courses", function (Course) {
     var coursesList = [];
+    var isLoaded = false;
 
     var add = function (course) {
         coursesList.push(course);
