@@ -6,16 +6,16 @@ coursomaticApp.factory("Course", function (Session) {
             this.desc = plainObject.desc;
             this.dates = plainObject.dates;
             this.students = plainObject.students;
-            this.sessionsData = getSessions(plainObject.sessionsData, plainObject.name);
+            this.sessionsData = getSessions(plainObject.sessionsData, plainObject.name,plainObject.students);
             this.courseUrl = plainObject.courseUrl;
             this.maxStudents = plainObject.maxStudents;
     };
 
-    getSessions = function (plainObject, courseName) {
+    getSessions = function (plainObject, courseName, students) {
         var sessions = [];
         var sessionsIndex = Object.keys(plainObject);
         for (var i = 0; i < sessionsIndex.length; i++) {
-           sessions.push(new Session(plainObject[sessionsIndex[i]],sessionsIndex[i],courseName));
+           sessions.push(new Session(plainObject[sessionsIndex[i]],sessionsIndex[i],courseName, students));
         }
        return sessions;
     };

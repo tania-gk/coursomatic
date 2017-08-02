@@ -21,8 +21,16 @@ var coursomaticApp = angular.module("coursomaticApp", ["ngRoute", "ngAnimate", "
 
  });
 
-coursomaticApp.controller("MainCtrl", function ($scope, $uibModal, activeUser) {
+coursomaticApp.controller("MainCtrl", function ($scope, $uibModal,$http, User, Users, activeUser) {
 /*    $scope.greetName = activeUser.get().firstName;*/
+
+    $http.get("data/users.json").then(function (response) {
+        if (Users.getAllUsers().length === 0) {
+            for (var i = 0; i < response.data.length; i++) {
+                Users.addUser(new User(response.data[i]));
+            }
+        }
+    });
 
     $scope.login = function () {
         $uibModal.open({

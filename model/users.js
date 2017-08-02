@@ -29,6 +29,13 @@ coursomaticApp.factory("activeUser", function () {
 
     var login = function (loggedInUser) {
         user = loggedInUser;
+        if (typeof(Storage) !== "undefined") {
+            user = loggedInUser;
+            localStorage.loggedInUser = loggedInUser;
+            user = loggedInUser;
+        } else {
+            user = loggedInUser;
+        }
     };
 
     var logout = function () {
@@ -38,13 +45,18 @@ coursomaticApp.factory("activeUser", function () {
     var get = function () {
         return user;
     };
+// todo
+    var getUserCourses = function (){
+
+    }
 
     return {
         isLoggedIn: isLoggedIn,
         isTeacher: isTeacher,
         login: login,
         logout: logout,
-        get: get
+        get: get,
+        getUserCourses: getUserCourses
     };
 });
 

@@ -1,14 +1,12 @@
 <div class="attendance-galery">
-    <div class = "gallery-btns col-sm-12">
-        <div class="btn-group">
-            <label class="btn btn-default|primary|success|info|warning|danger" ng-model="dasModel" uib-btn-radio="'All'" uncheckable active>All</label>
-            <label class="btn btn-default|primary|success|info|warning|danger" ng-model="dasModel" uib-btn-radio="'my-courses'" uncheckable>My Courses</label>
-            <label class="btn btn-default|primary|success|info|warning|danger" ng-model="dasModel" uib-btn-radio="'other-courses'" uncheckable>Other Courses</label>
-        </div>
+    <div class="btn-group col-sm-12">
+        <label class="btn btn-default|primary|success|info|warning|danger" ng-model="courseFilter" uib-btn-radio="'all'" uncheckable active>All</label>
+        <label class="btn btn-default|primary|success|info|warning|danger" ng-model="courseFilter" uib-btn-radio="'my-courses'" uncheckable>My Courses</label>
+        <label class="btn btn-default|primary|success|info|warning|danger" ng-model="courseFilter" uib-btn-radio="'other-courses'" uncheckable>Other Courses</label>
     </div>
 <div class="course-list">
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <div class="list-group menu category-click" data-filter = "{{course.name}}" ng-repeat="course in courses">
+        <div class="list-group menu category-click" data-filter = "{{course.name}}" ng-repeat="course in courses | filter:courseFilter">
             <a href="#" class="list-group-item course-item">
             <div class="course-image">
                 <img ng-src="{{course.courseUrl}}" class="img-circle"/>
@@ -29,15 +27,20 @@
               <!--  <i></i> -->
                 <i>{{session.date}}</i>
                 <div class="hidden-xs">
-                <span class="fa fa-thumbs-up fa-2x"></span>
-                <span class="fa fa-thumbs-down fa-2x"></span>
+                    <div class = "col-sm-4">
+                        <span class="fa fa-thumbs-up fa-2x"></span>
+                    </div>
+                    <div class = "col-sm-4">
+                        <span class="fa fa-thumbs-down fa-2x"></span>
+                    </div>
                 </div>
             </div>
             <div class="info col-xs-8 col-sm-7">
                 {{session.name}}
                 <div class="hidden-xs">
                     <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#location" aria-controls="location" role="tab" data-toggle="tab">Students</a></li>
+                        <li role="presentation" class="active"><a href="#location" aria-controls="location" role="tab" data-toggle="tab">Students</a></li>
+                        <li class="student-list">{{session.students}}</li>
                     </ul>
                 </div>
             </div>

@@ -1,12 +1,28 @@
-coursomaticApp.factory("Session", function (Users) {
-  function Session(plainObject,index, courseObj) { 
-            this.name = courseObj.name; 
+coursomaticApp.factory("Session", function (Users,User) {
+  function Session(plainObject,index, courseName, students) { 
+            this.name = courseName; 
+            this.students = getStudents(students);
             this.id = index;
             this.date = plainObject.date;
             this.added = plainObject.added;
             this.removed = plainObject.removed;
     };
 
+    getStudents = function (students) {
+      var studentsArr = "";
+      var usersArr = Users.getAllUsers();
+      for (var i=0 ; i< students.length; i++){
+        for (var j=0; j< usersArr.length ; j++) {
+          if (students[i] === usersArr[j].id) {
+            if (i>0 && i<students.length){
+              studentsArr += ", ";
+            }
+            studentsArr += usersArr[j].firstName + " "+ usersArr[j].lastName;
+          }
+        }
+      }
+      return studentsArr;
+    }
     return Session;
 });
 
