@@ -1,53 +1,53 @@
 <div class="attendance-galery">
-    <div class="btn-group col-sm-12">
-        <label class="btn btn-default|primary|success|info|warning|danger" ng-model="courseFilter" uib-btn-radio="'all'" uncheckable active>All</label>
-        <label class="btn btn-default|primary|success|info|warning|danger" ng-model="courseFilter" uib-btn-radio="'my-courses'" uncheckable>My Courses</label>
-        <label class="btn btn-default|primary|success|info|warning|danger" ng-model="courseFilter" uib-btn-radio="'other-courses'" uncheckable>Other Courses</label>
-    </div>
-<div class="course-list">
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <div class="list-group menu category-click" data-filter = "{{course.name}}" ng-repeat="course in courses | filter:courseFilter">
-            <a href="#" class="list-group-item course-item">
-            <div class="course-image">
-                <img ng-src="{{course.courseUrl}}" class="img-circle"/>
-            </div>  
-             <div class="course-title">    
-                 <h4>{{course.name}}</h4>
-                 <p>{{course.desc}}</p>
-              </div>
-            </a>
+    <div class="text-center">
+        <div class="btn-group col-sm-12">
+            <label class="btn btn-default|primary|success|info|warning|danger" ng-model="courseFilter" uib-btn-radio="'all'" center-block uncheckable active>All</label>
+            <label class="btn btn-default|primary|success|info|warning|danger" ng-model="courseFilter" uib-btn-radio="'my-courses'" center-block uncheckable>My Courses</label>
+            <label class="btn btn-default|primary|success|info|warning|danger" ng-model="courseFilter" uib-btn-radio="'other-courses'" center-block uncheckable>Other Courses</label>
         </div>
     </div>
-</div>
+    <div class="course-list">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="list-group menu category-click" data-filter="{{course.name}}" ng-repeat="course in courses ">
+                <a href="#" class="list-group-item course-item">
+                    <div class="course-image">
+                        <img ng-src="{{course.courseUrl}}" class="img-circle" />
+                    </div>
+                    <div class="course-title">
+                        <h4>{{course.name}}</h4>
+                        <p>{{course.desc}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 
-<div class="session-list">
-    <div class ="panel panel-default event col-xs-9 col-sm-9 col-md-9 col-lg-9 all" ng-repeat = "session in allSessionsArr">
-        <div class="panel-body">
-            <div class="rsvp col-xs-2 col-sm-2">
-              <!--  <i></i> -->
-                <i>{{session.date}}</i>
-                <div class="hidden-xs">
-                    <div class = "col-sm-4">
+    <div class="session-list">
+        <div class="panel panel-default event col-xs-9 col-sm-9 col-md-9 col-lg-9 all" ng-repeat="session in allSessionsArr">
+            <div class="panel-body">
+                <div class="rsvp col-xs-2 col-sm-2">
+                    <!--  <i></i> -->
+                    <i>{{session.date}}</i>
+                </div>
+                <div class="hidden-xscol-xs-2 col-sm-2">
+                    <div class="col-sm-4">
                         <span class="fa fa-thumbs-up fa-2x"></span>
                     </div>
-                    <div class = "col-sm-4">
+                    <div class="col-sm-4">
                         <span class="fa fa-thumbs-down fa-2x"></span>
                     </div>
                 </div>
-            </div>
-            <div class="info col-xs-8 col-sm-7">
-                {{session.name}}
-                <div class="hidden-xs">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#location" aria-controls="location" role="tab" data-toggle="tab">Students</a></li>
-                        <li class="student-list">{{session.students}}</li>
-                    </ul>
+
+                <div class="info col-xs-8 col-sm-8">
+                    {{session.name}}
+                    <div class="hidden-xs">
+                        <span class="student-list">Students: {{session.students}}</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-            <!-- Tab panes 
+    <!-- Tab panes 
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane active" id="location"> 10:00 - 13:30</div>
             </div>

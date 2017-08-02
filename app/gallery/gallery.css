@@ -167,53 +167,56 @@
     }
 }
 */
+
+
 /* gallery css*/
+
 .gallery-btns.col-sm-12 {
-  display:block;
-  margin:auto;
-  font-size: 1.5em;
+    display: block;
+    margin: auto;
+    font-size: 1.5em;
 }
 
-.btn-group.col-sm-12{
-  display:block;
-  margin:auto;
-  font-size: 1.5em;
+.btn-group.col-sm-12 {
+    display: block;
+    margin: auto;
+    font-size: 1.5em;
 }
 
-.menu{
-  color:#0C0A3E;
-  border-radius:80%;
+.menu {
+    color: #0C0A3E;
+    border-radius: 80%;
 }
 
-.courses-list{
-  height:100%;
+.courses-list {
+    height: 100%;
 }
 
-.course-item{
-  position:relative;
-  background-color: transparent;
-  height:150px;
+.course-item {
+    position: relative;
+    background-color: transparent;
+    height: 5em;
 }
 
-.course-image img{
-  position:absolute;
-  top:10%;
-  left: 6%;
-  background:#F3D6E4;
-  border: 3px solid #4F84C4;
-  width:60px;
-  height:60px;
+.course-image img {
+    position: absolute;
+    top: 10%;
+    left: 6%;
+    background: #F3D6E4;
+    border: 3px solid #4F84C4;
+    width: 60px;
+    height: 60px;
 }
 
-.course-title{
-  position:absolute;
-  bottom:10%;
-  right:10%;
-/*  color: #F3C677;*/
+.course-title {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    /*  color: #F3C677;*/
 }
 
 a.list-group-item {
-    color:#0C0A3E;
+    color: #0C0A3E;
 }
 
 .list-group-item:first-child {
@@ -225,38 +228,52 @@ a.list-group-item {
 }
 
 .event {
-  background: transparent;
-  border-radius: 15px 50px 15px 30px;
+    background: transparent;
+    border-radius: 15px 50px 15px 30px;
+    height: 5em;
 }
 
 .event .rsvp i {
-  font-size: 2em;
-  display: block;
-  position:relative;
-  top:17%;
-  margin-bottom:5px;
-  color:#0C0A3E;
+    font-size: 1.2em;
+    display: block;
+    position: relative;
+    top: 17%;
+    margin-bottom: 5px;
+    color: #0C0A3E;
 }
 
-.event .info{
-  font-size: 28px;
-  color: #0C0A3E;
+.event .info {
+    font-size: 1.2em;
+    color: #0C0A3E;
 }
 
-.event .info > div, .event .info > ul{
-  font-size: 12px;
+.event .info>div,
+.event .info>ul {
+    font-size: 0.9em;
 }
 
-.event .student-list{
-  font-size: 1.5em;
+.event .student-list {
+    font-size: 0.9em;
 }
+
+.fa-thumbs-up {
+    color: #82b74b;
+}
+
+.fa-thumbs-down {
+    color: #c94c4c;
+}
+
+
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
+
+@media (min-width: 992px) {
     .event .profile {
-      left: 17%;
+        left: 17%;
     }
 }
 
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
 
+/* Large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {}
