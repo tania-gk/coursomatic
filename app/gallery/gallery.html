@@ -8,12 +8,12 @@
     </div>
     <div class="course-list">
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <div class="list-group menu category-click" data-filter="{{course.name}}" ng-repeat="course in courses ">
+            <div class="list-group menu category-click" ng-repeat="course in courses ">
                 <a href="#" class="list-group-item course-item">
                     <div class="course-image">
                         <img ng-src="{{course.courseUrl}}" class="img-circle" />
                     </div>
-                    <div class="course-title">
+                    <div class="course-title" id="selCourse">
                         <h4>{{course.name}}</h4>
                         <p>{{course.desc}}</p>
                     </div>
@@ -45,7 +45,7 @@
 -->
     <div class="session-list">
 
-        <div class="panel panel-default event col-xs-9 col-sm-9 col-md-9 col-lg-9 all" ng-repeat="session in allSessionsArr">
+        <div class="panel panel-default event col-xs-9 col-sm-9 col-md-9 col-lg-9 all" ng-repeat="session in allSessionsArr | filter:sessionFilter">
             <div class="panel-body">
                 <div class="rsvp col-xs-2 col-sm-2">
                     <i>{{session.start.getUTCDate()}} {{session.month}}</i>

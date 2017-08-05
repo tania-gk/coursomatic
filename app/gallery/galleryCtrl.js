@@ -36,24 +36,30 @@ coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, uiCa
         $scope.allSessionsArr = allSessions.getAllSessionsArr();
         $scope.loggedUser = localStorage.loggedInUser;
     }
-
-    $scope.filterByName = function(session) {
-        if ($scope.sessionFilter.value === "all" ||
-            localStorage.loggedInUser.type === "teacher" ||
-            ($scope.sessionFilter.value === "my" && session.title.toLowerCase().indexOf(localStorage.loggedInUser.courseId) != -1) ||
-            ($scope.sessionFilter.value === "other" && session.title.toLowerCase().indexOf(localStorage.loggedInUser.courseId) == -1)) {
-            return true;
-        } else {
-            return false;
-        }
-    };
-
+    /*
+        $scope.filterByName = function(session) {
+            if ($scope.sessionFilter.value === "all" ||
+                localStorage.loggedInUser.type === "teacher" ||
+                ($scope.sessionFilter.value === "my" && session.title.toLowerCase().indexOf(localStorage.loggedInUser.courseId) != -1) ||
+                ($scope.sessionFilter.value === "other" && session.title.toLowerCase().indexOf(localStorage.loggedInUser.courseId) == -1)) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+    */
     $scope.addUser = function(session) {
         Sessions.addUserToSession(session);
     }
 
     $scope.removeUser = function(session) {
-            Sessions.removeUserFromSession(session);
+        Sessions.removeUserFromSession(session);
+    }
+
+    $scope.sessionFilter = function() {
+            var course = document.getElementById('selCourse');
+            var courseName = course.getElementsByTagName('h4').innerHTML;
+            return sessionStorage.title === courseName;
         }
         //configure calendar
     $scope.uiConfig = {
