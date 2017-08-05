@@ -1,4 +1,4 @@
-var coursomaticApp = angular.module("coursomaticApp", ["ngRoute", "ngAnimate", "ui.bootstrap"]);
+var coursomaticApp = angular.module("coursomaticApp", ["ngRoute", "ngAnimate", "ui.bootstrap", "ui.calendar"]);
 
 
 coursomaticApp.config(function($routeProvider) {

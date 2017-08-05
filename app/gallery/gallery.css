@@ -234,10 +234,10 @@ a.list-group-item {
 }
 
 .event .rsvp i {
-    font-size: 1.2em;
+    font-size: 1.3em;
     display: block;
     position: relative;
-    top: 17%;
+    /*    top: 5%;*/
     margin-bottom: 5px;
     color: #0C0A3E;
 }
@@ -257,7 +257,7 @@ a.list-group-item {
 }
 
 .fa-thumbs-up {
-    color: #82b74b;
+    color: #99c2ff;
 }
 
 .fa-thumbs-down {

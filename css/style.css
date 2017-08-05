@@ -1,46 +1,47 @@
-*{
-  box-sizing: border-box;
+* {
+    box-sizing: border-box;
 }
 
-body{
-   font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(to bottom right, #4F84C4,#F3D6E4);
-    color:#223A5E;
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(to bottom right, #4F84C4, #ff99c2);
+    color: #223A5E;
 }
 
 .my-background {
-    background: linear-gradient(to bottom right, #4F84C4,#F3D6E4);
+    background: linear-gradient(to bottom right, #4F84C4, #F3D6E4);
     color: #223A5E;
-    height:800px;
+    height: 800px;
     text-align: center;
 }
 
-h1{
+h1 {
     height: 3em;
 }
 
-
 .login-btn {
-    display:block;
+    display: block;
     margin: auto;
-    width:300px;
-}
-.my-navbar{
-   background: linear-gradient(to right,  #4F84C4,#F3D6E4);        
+    width: 300px;
 }
 
-.navbar{
+.my-navbar {
+    background: linear-gradient(to right, #4F84C4, #F3D6E4);
+}
+
+.navbar {
     margin-bottom: 0;
-    border:none;
+    border: none;
 }
 
-.navbar-default{
-    font-size:1.5em;
+.navbar-default {
+    font-size: 1.5em;
 }
 
-.navbar-default .navbar-brand, 
+.navbar-default .navbar-brand,
 .navbar-default .navbar-nav>li>a {
-   color: #223A5E;;      
+    color: #223A5E;
+    ;
 }
 
 .navbar-header>a {
@@ -49,13 +50,13 @@ h1{
 
 h1.logo {
     font-family: 'Pacifico', cursive;
-    font-size:5em; 
+    font-size: 5em;
 }
 
-.my-container{
-	margin: 4.5% auto;
-	width: 210px;
-	height: 140px;
-	position: relative;
-	perspective: 1000px;
+.my-container {
+    margin: 4.5% auto;
+    width: 210px;
+    height: 140px;
+    position: relative;
+    perspective: 1000px;
 }

@@ -1,5 +1,5 @@
 //service constructor
-coursomaticApp.factory("User", function () {
+coursomaticApp.factory("User", function() {
     function User(plainObject) {
         this.id = plainObject.id;
         this.firstName = plainObject.firstName;
@@ -16,37 +16,37 @@ coursomaticApp.factory("User", function () {
 });
 
 // Service that manges users
-coursomaticApp.factory("activeUser", function () {
+coursomaticApp.factory("activeUser", function(User) {
     var user = null;
 
-    var isLoggedIn = function () {
+    var isLoggedIn = function() {
         return user ? true : false;
     };
 
-    var isTeacher = function (){
+    var isTeacher = function() {
         return (user.type === "teacher");
     }
 
-    var login = function (loggedInUser) {
+    var login = function(loggedInUser) {
         user = loggedInUser;
         if (typeof(Storage) !== "undefined") {
-            user = loggedInUser;
-            localStorage.loggedInUser = loggedInUser;
+            localStorage.firstName = loggedInUser.firstName;
+            localStorage.lastName = loggedInUser.lastName;
             user = loggedInUser;
         } else {
             user = loggedInUser;
         }
     };
 
-    var logout = function () {
+    var logout = function() {
         user = null;
     };
 
-    var get = function () {
+    var get = function() {
         return user;
     };
-// todo
-    var getUserCourses = function (){
+    // todo
+    var getUserCourses = function() {
 
     }
 
@@ -60,19 +60,19 @@ coursomaticApp.factory("activeUser", function () {
     };
 });
 
-coursomaticApp.factory("Users", function () {
+coursomaticApp.factory("Users", function() {
     var usersArr = [];
 
-    var addUser = function (user){
+    var addUser = function(user) {
         usersArr.push(user);
     };
 
-    var updateUser = function (index, user) {
+    var updateUser = function(index, user) {
         usersArr[index] = user;
     }
 
-    var removeUser = function (index) {
-        usersArr.splice(index,1);
+    var removeUser = function(index) {
+        usersArr.splice(index, 1);
     }
     var getAllUsers = function() {
         return usersArr;
@@ -89,6 +89,5 @@ coursomaticApp.factory("Users", function () {
         removeUser: removeUser,
         getAllUsers: getAllUsers,
         get: get,
-     }
+    }
 });
-

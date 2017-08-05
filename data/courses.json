@@ -1,99 +1,99 @@
 {
     "001": {
-            "name":"Monday Morning",
-            "desc":"10:00-13:30",
-            "students":["1","2","3"],
-            "sessionsData": {
-                            "1001":{"date":"23-10-2017","added":[], "removed":[]},
-                            "1002":{"date":"30-10-2017","added":[], "removed":[]},
-                            "1003":{"date":"06-11-2017","added":[], "removed":[]},
-                            "1004":{"date":"13-11-2017","added":[], "removed":[]},
-                            "1005":{"date":"20-11-2017","added":[], "removed":[]},
-                            "1006":{"date":"27-11-2017","added":[], "removed":[]},
-                            "1007":{"date":"04-12-2017","added":[], "removed":[]},
-                            "1008":{"date":"11-12-2017","added":[], "removed":[]},
-                            "1009":{"date":"18-12-2017","added":[], "removed":[]},
-                            "1010":{"date":"25-12-2017","added":[], "removed":[]}
-                            },
-            "courseUrl": "pics/Mon1.jpg",
-            "maxStudents":"12"
-            },
+        "name": "Monday Morning",
+        "desc": "10:00-13:30",
+        "students": ["Michal Elmaliah"],
+        "sessionsData": {
+            "1001": { "StartAt": "2017-10-23T10:00", "EndAt": "2017-10-23T13:30", "added": [], "removed": [] },
+            "1002": { "StartAt": "2017-10-30T10:00", "EndAt": "2017-10-30T13:30", "added": [], "removed": [] },
+            "1003": { "StartAt": "2017-11-06T10:00", "EndAt": "2017-11-06T13:30", "added": [], "removed": [] },
+            "1004": { "StartAt": "2017-11-13T10:00", "EndAt": "2017-11-13T13:30", "added": [], "removed": [] },
+            "1005": { "StartAt": "2017-11-20T10:00", "EndAt": "2017-11-20T13:30", "added": [], "removed": [] },
+            "1006": { "StartAt": "2017-11-27T10:00", "EndAt": "2017-11-27T13:30", "added": [], "removed": [] },
+            "1007": { "StartAt": "2017-12-04T10:00", "EndAt": "2017-12-04T13:30", "added": [], "removed": [] },
+            "1008": { "StartAt": "2017-12-11T10:00", "EndAt": "2017-12-11T13:30", "added": [], "removed": [] },
+            "1009": { "StartAt": "2017-12-18T10:00", "EndAt": "2017-12-18T13:30", "added": [], "removed": [] },
+            "1010": { "StartAt": "2017-12-25T10:00", "EndAt": "2017-12-25T13:30", "added": [], "removed": [] }
+        },
+        "courseUrl": "pics/Mon1.jpg",
+        "maxStudents": "12"
+    },
     "002": {
-            "name":"Monday Evening",
-            "desc":"17:45-21:15",
-            "students":["2","3"],
-            "sessionsData": {
-                            "2001":{"date":"23-10-2017","added":[], "removed":[]},
-                            "2002":{"date":"30-10-2017","added":[], "removed":[]},
-                            "2003":{"date":"06-11-2017","added":[], "removed":[]},
-                            "2004":{"date":"13-11-2017","added":[], "removed":[]},
-                            "2005":{"date":"20-11-2017","added":[], "removed":[]},
-                            "2006":{"date":"27-11-2017","added":[], "removed":[]},
-                            "2007":{"date":"04-12-2017","added":[], "removed":[]},
-                            "2008":{"date":"11-12-2017","added":[], "removed":[]},
-                            "2009":{"date":"18-12-2017","added":[], "removed":[]},
-                            "2010":{"date":"25-12-2017","added":[], "removed":[]}
-                            },
-            "courseUrl": "pics/Mon2.jpg",
-            "maxStudents":"12"
+        "name": "Monday Evening",
+        "desc": "17:45-21:15",
+        "students": ["Noa Hoogi", "Bella Sagiv"],
+        "sessionsData": {
+            "2001": { "StartAt": "2017-10-23T17:45", "EndAt": "2017-10-23T21:15", "added": [], "removed": [] },
+            "2002": { "StartAt": "2017-10-30T17:45", "EndAt": "2017-10-30T21:15", "added": [], "removed": [] },
+            "2003": { "StartAt": "2017-11-06T17:45", "EndAt": "2017-11-06T21:15", "added": [], "removed": [] },
+            "2004": { "StartAt": "2017-11-13T17:45", "EndAt": "2017-11-13T21:15", "added": [], "removed": [] },
+            "2005": { "StartAt": "2017-11-20T17:45", "EndAt": "2017-11-20T21:15", "added": [], "removed": [] },
+            "2006": { "StartAt": "2017-11-27T17:45", "EndAt": "2017-11-27T21:15", "added": [], "removed": [] },
+            "2007": { "StartAt": "2017-12-04T17:45", "EndAt": "2017-12-04T21:15", "added": [], "removed": [] },
+            "2008": { "StartAt": "2017-12-11T17:45", "EndAt": "2017-12-11T21:15", "added": [], "removed": [] },
+            "2009": { "StartAt": "2017-12-18T17:45", "EndAt": "2017-12-18T21:15", "added": [], "removed": [] },
+            "2010": { "StartAt": "2017-12-25T17:45", "EndAt": "2017-12-25T21:15", "added": [], "removed": [] }
+        },
+        "courseUrl": "pics/Mon2.jpg",
+        "maxStudents": "12"
     },
     "003": {
-            "name":"Tuesday Morning",
-            "desc":"10:00-13:30",
-            "students":["4", "5", "6"],
-            "sessionsData": {
-                            "3001":{"date":"24-10-2017","added":[], "removed":[]},
-                            "3002":{"date":"31-10-2017","added":[], "removed":[]},
-                            "3003":{"date":"07-11-2017","added":[], "removed":[]},
-                            "3004":{"date":"14-11-2017","added":[], "removed":[]},
-                            "3005":{"date":"21-11-2017","added":[], "removed":[]},
-                            "3006":{"date":"28-11-2017","added":[], "removed":[]},
-                            "3007":{"date":"05-12-2017","added":[], "removed":[]},
-                            "3008":{"date":"12-12-2017","added":[], "removed":[]},
-                            "3009":{"date":"19-12-2017","added":[], "removed":[]},
-                            "3010":{"date":"26-12-2017","added":[], "removed":[]}
-                            },
-            "courseUrl": "pics/Tue.jpg",
-            "maxStudents":"12"
-           },
+        "name": "Tuesday Morning",
+        "desc": "10:00-13:30",
+        "students": ["Loren Mizrahi", "Eti Levanon", "Anat Gur"],
+        "sessionsData": {
+            "3001": { "StartAt": "2017-10-24T10:00", "EndAt": "2017-10-24T13:30", "added": [], "removed": [] },
+            "3002": { "StartAt": "2017-10-24T10:00", "EndAt": "2017-10-24T13:30", "added": [], "removed": [] },
+            "3003": { "StartAt": "2017-11-07T10:00", "EndAt": "2017-11-07T13:30", "added": [], "removed": [] },
+            "3004": { "StartAt": "2017-11-14T10:00", "EndAt": "2017-11-14T13:30", "added": [], "removed": [] },
+            "3005": { "StartAt": "2017-11-21T10:00", "EndAt": "2017-11-21T13:30", "added": [], "removed": [] },
+            "3006": { "StartAt": "2017-11-28T10:00", "EndAt": "2017-11-28T13:30", "added": [], "removed": [] },
+            "3007": { "StartAt": "2017-12-05T10:00", "EndAt": "2017-12-05T13:30", "added": [], "removed": [] },
+            "3008": { "StartAt": "2017-12-12T10:00", "EndAt": "2017-12-12T13:30", "added": [], "removed": [] },
+            "3009": { "StartAt": "2017-12-19T10:00", "EndAt": "2017-12-19T13:30", "added": [], "removed": [] },
+            "3010": { "StartAt": "2017-12-26T10:00", "EndAt": "2017-12-26T13:30", "added": [], "removed": [] }
+        },
+        "courseUrl": "pics/Tue.jpg",
+        "maxStudents": "12"
+    },
     "004": {
-            "name":"Wednesday Morning",
-            "desc":"10:00-13:30",
-            "students":["7", "8", "9", "10", "11"],
-            "sessionsData": {
-                            "4001":{"date":"18-10-2017","added":[], "removed":[]},
-                            "4002":{"date":"25-10-2017","added":[], "removed":[]},
-                            "4003":{"date":"01-11-2017","added":[], "removed":[]},
-                            "4004":{"date":"08-11-2017","added":[], "removed":[]},
-                            "4005":{"date":"15-11-2017","added":[], "removed":[]},
-                            "4006":{"date":"22-11-2017","added":[], "removed":[]},
-                            "4007":{"date":"29-11-2017","added":[], "removed":[]},
-                            "4008":{"date":"06-12-2017","added":[], "removed":[]},
-                            "4009":{"date":"13-12-2017","added":[], "removed":[]},
-                            "4010":{"date":"20-12-2017","added":[], "removed":[]},
-                            "4011":{"date":"27-12-2017","added":[], "removed":[]}
-                            },
-            "courseUrl": "pics/Wed.jpg",
-            "maxStudents":"12"
+        "name": "Wednesday Morning",
+        "desc": "10:00-13:30",
+        "students": ["Tali Zion", "Ella Matan"],
+        "sessionsData": {
+            "4001": { "StartAt": "2017-10-18T10:00", "EndAt": "2017-10-18T13:30", "added": [], "removed": [] },
+            "4002": { "StartAt": "2017-10-25T10:00", "EndAt": "2017-10-25T13:30", "added": [], "removed": [] },
+            "4003": { "StartAt": "2017-11-01T10:00", "EndAt": "2017-11-01T13:30", "added": [], "removed": [] },
+            "4004": { "StartAt": "2017-11-08T10:00", "EndAt": "2017-11-08T13:30", "added": [], "removed": [] },
+            "4005": { "StartAt": "2017-11-15T10:00", "EndAt": "2017-11-15T13:30", "added": [], "removed": [] },
+            "4006": { "StartAt": "2017-11-22T10:00", "EndAt": "2017-11-22T13:30", "added": [], "removed": [] },
+            "4007": { "StartAt": "2017-11-29T10:00", "EndAt": "2017-11-29T13:30", "added": [], "removed": [] },
+            "4008": { "StartAt": "2017-12-06T10:00", "EndAt": "2017-12-06T13:30", "added": [], "removed": [] },
+            "4009": { "StartAt": "2017-12-13T10:00", "EndAt": "2017-12-13T13:30", "added": [], "removed": [] },
+            "4010": { "StartAt": "2017-12-20T10:00", "EndAt": "2017-12-20T13:30", "added": [], "removed": [] },
+            "4011": { "StartAt": "2017-12-27T10:00", "EndAt": "2017-12-27T13:30", "added": [], "removed": [] }
+        },
+        "courseUrl": "pics/Wed.jpg",
+        "maxStudents": "12"
     },
     "005": {
-            "name":"Thursday Morning",
-            "desc":"10:00-13:30",
-            "students":["12", "13"],
-            "sessionsData": {
-                            "5001":{"date":"19-10-2017","added":[], "removed":[]},
-                            "5002":{"date":"26-10-2017","added":[], "removed":[]},
-                            "5003":{"date":"02-11-2017","added":[], "removed":[]},
-                            "5004":{"date":"09-11-2017","added":[], "removed":[]},
-                            "5005":{"date":"16-11-2017","added":[], "removed":[]},
-                            "5006":{"date":"23-11-2017","added":[], "removed":[]},
-                            "5007":{"date":"30-11-2017","added":[], "removed":[]},
-                            "5008":{"date":"07-12-2017","added":[], "removed":[]},
-                            "5009":{"date":"14-12-2017","added":[], "removed":[]},
-                            "5010":{"date":"21-12-2017","added":[], "removed":[]},
-                            "5011":{"date":"28-12-2017","added":[], "removed":[]}
-                            },
-            "courseUrl": "pics/Thu.jpg",
-            "maxStudents":"12"
+        "name": "Thursday Morning",
+        "desc": "10:00-13:30",
+        "students": ["Batia Yaacov", "Frida Zahav", "Tikva Sagiv", "Pnina Fattal", "Lea Har Zion"],
+        "sessionsData": {
+            "5001": { "StartAt": "2017-10-19T10:00", "EndAt": "2017-10-19T13:30", "added": [], "removed": [] },
+            "5002": { "StartAt": "2017-10-26T10:00", "EndAt": "2017-10-26T13:30", "added": [], "removed": [] },
+            "5003": { "StartAt": "2017-11-02T10:00", "EndAt": "2017-11-02T13:30", "added": [], "removed": [] },
+            "5004": { "StartAt": "2017-11-09T10:00", "EndAt": "2017-11-09T13:30", "added": [], "removed": [] },
+            "5005": { "StartAt": "2017-11-16T10:00", "EndAt": "2017-11-16T13:30", "added": [], "removed": [] },
+            "5006": { "StartAt": "2017-11-23T10:00", "EndAt": "2017-11-23T13:30", "added": [], "removed": [] },
+            "5007": { "StartAt": "2017-11-30T10:00", "EndAt": "2017-11-30T13:30", "added": [], "removed": [] },
+            "5008": { "StartAt": "2017-12-07T10:00", "EndAt": "2017-12-07T13:30", "added": [], "removed": [] },
+            "5009": { "StartAt": "2017-12-14T10:00", "EndAt": "2017-12-14T13:30", "added": [], "removed": [] },
+            "5010": { "StartAt": "2017-12-21T10:00", "EndAt": "2017-12-21T13:30", "added": [], "removed": [] },
+            "5011": { "StartAt": "2017-12-28T10:00", "EndAt": "2017-12-28T13:30", "added": [], "removed": [] }
+        },
+        "courseUrl": "pics/Thu.jpg",
+        "maxStudents": "12"
     }
 }
