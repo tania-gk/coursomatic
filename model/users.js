@@ -1,30 +1,33 @@
 //service constructor
 coursomaticApp.factory("User", function() {
     function User(plainObject) {
-        this.id = plainObject.id;
         this.firstName = plainObject.firstName;
         this.lastName = plainObject.lastName;
         this.phone = plainObject.phone;
         this.city = plainObject.city;
         this.email = plainObject.email;
         this.password = plainObject.password;
-        this.type = plainObject.type;
+        this.type = "student";
         this.courseId = plainObject.courseId;
-        this.clipartUrl = plainObject.clipartUrl;
+        /*        this.clipartUrl = plainObject.clipartUrl;*/
     };
     return User;
 });
 
 // Service that manges users
 coursomaticApp.factory("activeUser", function(User) {
-    var user = null;
+    var user = new User({});
 
     var isLoggedIn = function() {
-        return user ? true : false;
+        return (localStorage.firstName || user) ? true : false;
     };
 
     var isTeacher = function() {
-        return (user.type === "teacher");
+        if (localStorage.firstName && user.type === "teacher") {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     var login = function(loggedInUser) {
@@ -40,6 +43,8 @@ coursomaticApp.factory("activeUser", function(User) {
 
     var logout = function() {
         user = null;
+        localStorage.firstName = null;
+        localStorage.lastName = null;
     };
 
     var get = function() {

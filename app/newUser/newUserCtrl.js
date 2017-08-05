@@ -14,13 +14,14 @@ coursomaticApp.controller("NewUserCtrl", function($scope, $http, $location, User
         $scope.loggedUser = localStorage.loggedInUser;
     }
 
-    $scope.User = new User({});
+    $scope.newUser = new User({});
 
     $scope.cancel = function() {
         $location.path("/gallery");
     }
 
     $scope.saveUser = function() {
-        Users.addUser($scope.User);
+        Users.addUser($scope.newUser);
+        location.assign("#!/studentList")
     }
 });

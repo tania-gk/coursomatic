@@ -55,7 +55,7 @@
         "email": "lorenm@yahoo.com",
         "password": "11111",
         "type": "student",
-        "courseId": "Tuesday",
+        "courseId": "Tuesday Morning",
         "clipartUrl": "birds/bird5.jpg"
     },
     {
@@ -67,7 +67,7 @@
         "email": "e.t@gmail.com",
         "password": "11111",
         "type": "student",
-        "courseId": "Tuesday",
+        "courseId": "Tuesday Morning",
         "clipartUrl": "birds/bird6.jpg"
     },
     {
@@ -79,7 +79,7 @@
         "email": "agur@gmail.com",
         "password": "11111",
         "type": "student",
-        "courseId": "Tuesday",
+        "courseId": "Tuesday Morning",
         "clipartUrl": "birds/bird7.jpg"
     },
     {
@@ -91,7 +91,7 @@
         "email": "tz@yahoo.com",
         "password": "11111",
         "type": "student",
-        "courseId": "Wednesday",
+        "courseId": "Wednesday Morning",
         "clipartUrl": "birds/owl1.jpg"
     },
     {
@@ -103,7 +103,7 @@
         "email": "matan@yahoo.com",
         "password": "11111",
         "type": "student",
-        "courseId": "Wednesday",
+        "courseId": "Wednesday Morning",
         "clipartUrl": "birds/owl2.jpg"
     },
     {
@@ -115,7 +115,7 @@
         "email": "baty@gmail.com",
         "password": "11111",
         "type": "student",
-        "courseId": "Thursday",
+        "courseId": "Thursday Morning",
         "clipartUrl": "birds/owl2.jpg"
     },
     {
@@ -127,7 +127,7 @@
         "email": "zahav@gmail.com",
         "password": "11111",
         "type": "student",
-        "courseId": "Thursday",
+        "courseId": "Thursday Morning",
         "clipartUrl": "birds/owl3.png"
     },
     {
@@ -139,7 +139,7 @@
         "email": "bsagiv@yahoo.com",
         "password": "11111",
         "type": "student",
-        "courseId": "Thursday",
+        "courseId": "Thursday Morning",
         "clipartUrl": "birds/owl4.jpg"
     },
     {
@@ -151,7 +151,7 @@
         "email": "pnfa@gmail.com",
         "password": "11111",
         "type": "student",
-        "courseId": "Thursday",
+        "courseId": "Thursday Morning",
         "clipartUrl": "birds/owl5.png"
     },
     {
@@ -163,7 +163,7 @@
         "email": "lhz@gmail.com",
         "password": "11111",
         "type": "student",
-        "courseId": "Thursday",
+        "courseId": "Thursday Morning",
         "clipartUrl": "birds/owl6.jpg"
     }
 ]

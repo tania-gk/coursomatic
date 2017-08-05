@@ -18,7 +18,10 @@ coursomaticApp.config(function($routeProvider) {
             templateUrl: "app/newUser/newUser.html",
             controller: "NewUserCtrl"
         })
-
+        .when("/studentList", {
+            templateUrl: "app/studentList/studentList.html",
+            controller: "StudentListCtrl"
+        })
 });
 
 coursomaticApp.controller("MainCtrl", function($scope, $uibModal, $http, User, Users, activeUser) {
