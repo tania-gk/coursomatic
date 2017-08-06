@@ -1,4 +1,10 @@
-coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, uiCalendarConfig, Course, Courses, activeUser, allSessions, Sessions) {
+coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, uiCalendarConfig, Users, Course, Courses, activeUser, allSessions, Sessions) {
+    $scope.sessionTitle = "";
+    $scope.sessionStart = "";
+    $scope.registeredStudents = [];
+    $scope.removedStudents = [];
+    $scope.addedStudents = [];
+
     $scope.events = [];
     $scope.SelectedEvent;
     $scope.eventSources = [{
@@ -48,12 +54,27 @@ coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, uiCa
             }
         };
     */
+
+    $scope.selectSession = function(session) {
+        $scope.sessionTitle = session.title;
+        $scope.sessionStart = session.start.toLocaleTimeString();
+        $scope.registeredStudents = session.students;
+        $scope.removedStudents = session.removed;
+        $scope.addedStudents = session.added;
+        // document.getElementById("sessionDetails").className.splice(document.getElementById("sessionDetails").className.indexOf("ng-hide", 7));
+        // document.getElementById("sessionDetails").className.concat("ng-show");
+    }
+
+    $scope.userList = Users.getAllUsers();
+
     $scope.addUser = function(session) {
         Sessions.addUserToSession(session);
+        $scope.addedStudents = session.added;
     }
 
     $scope.removeUser = function(session) {
         Sessions.removeUserFromSession(session);
+        $scope.removedStudents = session.removed;
     }
 
     $scope.sessionFilter = function() {

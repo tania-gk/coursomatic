@@ -65,7 +65,7 @@ coursomaticApp.factory("activeUser", function(User) {
     };
 });
 
-coursomaticApp.factory("Users", function() {
+coursomaticApp.factory("Users", function($http, User) {
     var usersArr = [];
 
     var addUser = function(user) {
@@ -80,6 +80,14 @@ coursomaticApp.factory("Users", function() {
         usersArr.splice(index, 1);
     }
     var getAllUsers = function() {
+        if (usersArr.length === 0) {
+            $http.get("data/users.json").then(function(response) {
+                for (var i = 0; i < response.data.length; i++) {
+                    usersArr.push(new User(response.data[i]));
+                }
+            })
+        }
+
         return usersArr;
     }
 
