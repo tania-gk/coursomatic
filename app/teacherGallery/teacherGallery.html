@@ -22,9 +22,9 @@
     <div  class="sessionDetailsItem  col-sm-12">
         <h4>{{sessionTitle}} - {{sessionDate}} - {{sessionStart}}</h4>
 
-        <button type="button" id= "regList" class="btn btn-default" ondrop="drop(event)" ondragover="allowDrop(event)" ng-click="isCollapsedDetails = !isCollapsedDetails">Registered Students</button>
+        <button type="button" id= "regList" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Registered Students</button>
         <ul class="list-group" uib-collapse="isCollapsedDetails">
-            <li class="list-group-item  sessionItem" ng-repeat="student in registeredStudents" >{{student}}</li>
+            <li class="list-group-item  sessionItem"  ondrop="drop(event)" ondragover="allowDrop(event)" ng-repeat="student in registeredStudents" >{{student}}</li>
         </ul>
         <button type="button" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Removed Students</button>
         <ul class="list-group" uib-collapse="isCollapsedDetails">
@@ -46,7 +46,7 @@
                     <th>Last Name</th>
                 </tr>
             </thead>
-            <tr id = "usList" ondrop="drop(event)" ondragover="allowDrop(event)" ng-repeat="user in userList">
+            <tr id = "usList" draggable="true" ondrop="drop(event)" ondragover="allowDrop(event)" ng-repeat="user in userList">
                 <td>{{user.firstName}}</td>
                 <td>{{user.lastName}}</td>
             </tr>
