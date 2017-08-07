@@ -1,259 +1,30 @@
-/*.gallery-item{
-    width:200px;
-    height:200px;
-    margin:auto;
-}
-.event .panel-body {
- /* background: #0C0A3E;
-  border: 1px solid #F3C677;
-  padding:0;
-  margin:0;
-  height:86px;
-}
- .event .panel-body .rsvp {
-  border-left: none;
-  padding: 0;
-  text-align: center;
-  position: relative;
-  background: #0C0A3E;
-  color: #F3C677;
-  height: 100%;
-} 
-
-.event .rsvp > div {
-  font-size: 12px;
-  position: absolute;
-  bottom: 0;
-  background: #42A5F5;
-  width: 100%;
+.attendance-galery >div >button {
+    background: transparent;
+    color:white;
+    font-size: 1.3em;
 }
 
-.event .rsvp i {
-  font-size: 2em;
-  display: block;
-  position:relative;
-  top:17%;
-  margin-bottom:5px;
-}
-.event .rsvp i:last-of-type{
-    font-size:1.5em;
-    margin-top:-23px;
-}
-
-.event .rsvp span {
-  cursor: pointer;
-  padding: 0 5px;
-  margin: 5px 0;
-  width:45%;
-}
-.event .rsvp span:first-of-type{
-  border-right: 1px solid white;
-}
-.event .rsvp span:hover{
-  color: #1565C0;
-}
-
-.event .info{
-  font-size: 28px;
-  color: #F3C677;
-}
-
-.event .info > div, .event .info > ul{
-  font-size: 12px;
-}
-
-.profile-image {
-  position: absolute;
-  background: white;
-  padding: 3px;
-  width: 5em;
-  border-radius: 50%;
-  border: 1px solid #CCC;
-  box-sizing: content-box;
-  z-index: 1;
-  top:4px;
-}
-
-.event .author img {
-    width:100%;
-    border-radius:50%;
-}
-
-/* Overwrites 
-.nav-tabs a {
-  background: #90CAF9;
-  color: white;
-}
-.info .nav-tabs li.active a {
-  background-color: #448AFF;
-  color: white;
-}
-.info .nav-tabs li:hover a, .info .nav-tabs li.active:hover a {
-  background: #00BCD4;
-  color: white;
-}
-.tab-content {
-  background: white;
-  border-radius: 0 10px;
-  padding: 10px;
-}
-
-/* Small devices (tablets, 768px and up) 
-@media (min-width: 768px) { 
-    .event .panel-body {
-        height:158px;
-    }
-    
-    .event .rsvp {
-        min-height:100%;
-    }
-    
-    .event .rsvp i {
-        font-size:3em;
-        top:5%;
-    }
-    
-    .event .panel-body .author {
-      position: relative;
-      color: #2196F3;
-      padding:10px;
-      height:100%;
-    }
-    .event .profile {
-      position: relative;
-      z-index: 0;
-      border-left: 2px solid white;
-      top: -5px;
-      padding-left: 55px;
-      height: 100%;
-      left: 10%;
-    }
-    .event .profile strong {
-      display: block;
-      color: white;
-      font:20px bold 'Fredoka One', serif;
-      -webkit-text-stroke-width: .6px;
-      -webkit-text-stroke-color: #448AFF;
-      margin-bottom: 5px;
-    }
-    .event .author .profile i {
-      color:  #448AFF;
-      padding-left: 0;
-    }
-    .event .profile .links {
-      position: absolute;
-      bottom: 0;
-    }
-    .event .profile article {
-        padding:0 41px 0 0;
-    }
-    .event .author .profile i:hover{
-      color:  #00BCD4;
-    }
-    .profile-image {
-      position: absolute;
-      background: white;
-      padding: 3px;
-      width: 30%;
-      border-radius: 50%;
-      border: 1px solid #CCC;
-      box-sizing: content-box;
-      z-index: 1;
-      top:13px;
-    }
-    .event .author img {
-      width: 100%;
-      border-radius: 50%;
-    }
-}
-*/
-
-
-/* gallery css*/
-
-.gallery-btns.col-sm-12 {
-    display: block;
-    margin: auto;
-    font-size: 1.5em;
-}
-
-.btn-group.col-sm-12 {
-    display: block;
-    margin: auto;
-    font-size: 1.5em;
-}
-
-.menu {
-    color: #0C0A3E;
-    border-radius: 80%;
-}
-
-.courses-list {
-    height: 800px;
-}
-
-.course-item {
-    position: relative;
-    background-color: transparent;
-    height: 5em;
-}
-
-.course-image img {
-    position: absolute;
-    top: 10%;
-    left: 6%;
+img.course-image {
+/*    top: 10%;
+    left: 6%;*/
     background: #F3D6E4;
     border: 3px solid #4F84C4;
     width: 60px;
     height: 60px;
 }
 
-.course-title {
-    position: absolute;
-    bottom: 10%;
-    right: 10%;
-    /*  color: #F3C677;*/
-}
-
-a.list-group-item {
-    color: #0C0A3E;
-}
-
-.list-group-item:first-child {
-    border-radius: 50px 15px 30px 15px;
-}
-
-.list-group-item:last-child {
-    border-radius: 50px 15px 30px 15px;
-}
-
-.event {
+.sessionItem {
     background: transparent;
-    border-radius: 15px 50px 15px 30px;
-    height: 5em;
-}
-
-.event .rsvp i {
-    font-size: 1.3em;
-    display: block;
-    position: relative;
-    /*    top: 5%;*/
-    margin-bottom: 5px;
-    color: #0C0A3E;
-}
-
-.event .info {
     font-size: 1.2em;
-    color: #0C0A3E;
+    cursor:pointer;
 }
 
-.event .info>div,
-.event .info>ul {
-    font-size: 0.9em;
+.sessionDetails >div >h4 >div >button {
+    background:transparent;
 }
 
-.event .student-list {
-    font-size: 0.9em;
+.sessionDetailsItem {
+    display:inline-block;
 }
 
 .fa-thumbs-up {
@@ -263,17 +34,3 @@ a.list-group-item {
 .fa-thumbs-down {
     color: #c94c4c;
 }
-
-
-/* Medium devices (desktops, 992px and up) */
-
-@media (min-width: 992px) {
-    .event .profile {
-        left: 17%;
-    }
-}
-
-
-/* Large devices (large desktops, 1200px and up) */
-
-@media (min-width: 1200px) {}

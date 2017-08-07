@@ -1,0 +1,69 @@
+<div class="attendance-galery col-sm-3">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default" ng-repeat="course in courses">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                        {{course.name}}</a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in">
+                <div class="panel-body" ng-repeat="session in course.sessionsData" ng-click="selectSession(session)">{{session.start.getUTCDate()}} {{session.month}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=" col-sm-9">
+    <div class="hidden-xs">
+        <div class="col-sm-1">
+            <a class="fa fa-thumbs-up fa-2x" ng-click="addUser(session)"></a>
+        </div>
+        <div class="col-sm-1">
+            <a class="fa fa-thumbs-down fa-2x" ng-click="removeUser(session)"></a>
+        </div>
+    </div>
+    <div class="sessionDetails ng-show" id="sessionDetails">
+        <h4>{{sessionTitle}} - {{sessionStart}}</h4>
+
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#!/gallery">
+                            Registered Students</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body" ng-repeat="student in registeredStudents">{{student}}</div>
+                </div>
+
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#!/gallery">
+                            Added Students</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body" ng-repeat="student in addedStudents">{{student}}</div>
+                </div>
+
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#!/gallery">
+                            Removed Students</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body" ng-repeat="student in removedStudents">{{student}}</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,69 +1,53 @@
-<div class="attendance-galery col-sm-3">
-    <div class="panel-group" id="accordion">
-        <div class="panel panel-default" ng-repeat="course in courses">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#!/gallery">
-                        {{course.name}}</a>
-                </h4>
-            </div>
-            <div id="collapse1" class="panel-collapse collapse in">
-                <div class="panel-body" ng-repeat="session in course.sessionsData" ng-click="selectSession(session)">{{session.start.getUTCDate()}} {{session.month}}</div>
-            </div>
-        </div>
-    </div>
+<!-- filter buttons -->
+<div class="btn-group col-sm-12">
+    <label class="btn btn-primary" ng-model="courseFilter" ng-click=filterCourses("all") center-block uncheckable active>All</label>
+    <label class="btn btn-primary" ng-model="courseFilter" ng-click=filterCourses("my") center-block uncheckable>My Courses</label>
+    <label class="btn btn-primary" ng-model="courseFilter" ng-click=filterCourses("other") center-block uncheckable>Other Courses</label>
 </div>
-<div class=" col-sm-9">
-    <div class="hidden-xs">
-        <div class="col-sm-1">
-            <a class="fa fa-thumbs-up fa-2x" ng-click="addUser(session)"></a>
-        </div>
-        <div class="col-sm-1">
-            <a class="fa fa-thumbs-down fa-2x" ng-click="removeUser(session)"></a>
-        </div>
+
+<!-- courses menu -->
+
+<div class="attendance-galery col-sm-3">
+  <uib-accordion close-others="true">
+    <div class="courseItem"  ng-repeat="course in courses">
+        <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed" id="'course'+{{course.id}}">
+           <img ng-src="{{course.courseUrl}}" class="img-circle course-image" />
+            {{course.name}}</button>
+         <ul class="list-group"  uib-collapse="isCollapsed">
+            <li class="list-group-item sessionItem"ng-repeat="session in course.sessionsData" ng-click="selectSession(session)"> {{session.start.getUTCDate()}} {{session.month}}</li>
+        </ul>
     </div>
-    <div class="sessionDetails ng-show" id="sessionDetails">
-        <h4>{{sessionTitle}} - {{sessionStart}}</h4>
+  </uib-accordion>
+</div>
 
-        <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#!/gallery">
-                            Registered Students</a>
-                    </h4>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse in">
-                    <div class="panel-body" ng-repeat="student in registeredStudents">{{student}}</div>
-                </div>
 
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#!/gallery">
-                            Added Students</a>
-                    </h4>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse in">
-                    <div class="panel-body" ng-repeat="student in addedStudents">{{student}}</div>
-                </div>
-
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#!/gallery">
-                            Removed Students</a>
-                    </h4>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse in">
-                    <div class="panel-body" ng-repeat="student in removedStudents">{{student}}</div>
-                </div>
-
-            </div>
+<div class="sessionDetails col-sm-4 ng-show" id="sessionDetails">
+<!-- buttons -->
+<div class="sessionDetailsItem col-sm-12">
+    <h4>
+        <div class="col-sm-1">
+            <button  type="button" class="btn btn-default fa fa-thumbs-up fa-2x" ng-click="addUser()"></button>
         </div>
+        <div class="col-sm-1">
+            <button  type="button" class="btn btn-default fa fa-thumbs-down fa-2x" ng-click="removeUser()"></button>
+        </div>
+    </h4>
+</div>
+<!-- session details pannel -->
+<div  class="sessionDetailsItem  col-sm-12">
+    <h4>{{sessionTitle}} - {{sessionDate}} - {{sessionStart}}</h4>
 
-    </div>
-
+    <button type="button" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Registered Students</button>
+    <ul class="list-group" uib-collapse="isCollapsedDetails">
+        <li class="list-group-item  sessionItem" ng-repeat="student in registeredStudents" >{{student}}</li>
+    </ul>
+    <button type="button" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Removed Students</button>
+    <ul class="list-group" uib-collapse="isCollapsedDetails">
+        <li class="list-group-item  sessionItem" ng-repeat="student in removedStudents" >{{student}}</li>
+    </ul>
+    <button type="button" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Added Students</button>
+    <ul class="list-group" uib-collapse="isCollapsedDetails">
+        <li class="list-group-item  sessionItem" ng-repeat="student in addedStudents" >{{student}}</li>
+    </ul>
+</div>
 </div>

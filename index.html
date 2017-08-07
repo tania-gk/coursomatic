@@ -16,7 +16,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-calendar/1.0.0/calendar.js"></script>
@@ -49,10 +48,12 @@
     <script src="app/home/homeCtrl.js"></script>
     <script src="app/login/loginCtrl.js"></script>
     <script src="app/gallery/galleryCtrl.js"></script>
+    <script src="app/teacherGallery/teacherGallery.js"></script>
     <script src="app/newUser/newUserCtrl.js"></script>
     <script src="app/studentList/studentList.js"></script>
     <link href="css/style.css" rel="stylesheet">
     <link href="app/login/login.css" rel="stylesheet">
+    <link href="app/teacherGallery/teacherGallery.css" rel="stylesheet">
     <link href="app/gallery/gallery.css" rel="stylesheet">
     <link href="app/newUser/newUser.css" rel="stylesheet">
     <link href="app/studentList/studentList.css" rel="stylesheet">
@@ -74,9 +75,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                <li ng-show="isLoggedIn()"><a href="#!/newStudent">New Student</a></li>
-                <!-- removed user.type === "teacher"-->
-                <li ng-show="isLoggedIn()"><a href="#!/studentList">Student List</a></li>
+                <li ng-show="isLoggedIn() && isTeacher()"><a href="#!/teacherGallery">Manage Attendance</a></li>
+                <li ng-show="isLoggedIn() && isTeacher()"><a href="#!/newStudent">New Student</a></li>
+                <li ng-show="isLoggedIn()  && isTeacher()"><a href="#!/studentList">Student List</a></li>
                 <!-- <li ng-show="isLoggedIn()"><a href="#!/userProfile">My Profile</a></li> -->
             </ul>
             <ul class="nav navbar-nav navbar-right">

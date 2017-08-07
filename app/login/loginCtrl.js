@@ -7,7 +7,11 @@ coursomaticApp.controller("LoginCtrl", function ($scope, $uibModalInstance, $htt
         if (user != null) {
             activeUser.login(user);
             $uibModalInstance.close("Logged-in");
-            $location.path("/gallery")
+            if(localStorage.type === "student") {
+                $location.path("/gallery")
+            } else {
+                $location.path("/teacherGallery")
+            }
         } else {
             console.log(JSON.stringify(user));
             $scope.failedAttempt = true;

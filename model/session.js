@@ -66,6 +66,7 @@ coursomaticApp.factory("Sessions", function() {
     };
 
 
+    
     return {
         addUserToSession: addUserToSession,
         removeUserFromSession: removeUserFromSession

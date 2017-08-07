@@ -7,7 +7,7 @@ coursomaticApp.factory("User", function() {
         this.city = plainObject.city;
         this.email = plainObject.email;
         this.password = plainObject.password;
-        this.type = "student";
+        this.type = (plainObject.type == null) ? "student" : plainObject.type;
         this.courseId = plainObject.courseId;
         /*        this.clipartUrl = plainObject.clipartUrl;*/
     };
@@ -15,7 +15,7 @@ coursomaticApp.factory("User", function() {
 });
 
 // Service that manges users
-coursomaticApp.factory("activeUser", function(User) {
+coursomaticApp.factory("activeUser", function(User, Courses) {
     var user = new User({});
 
     var isLoggedIn = function() {
@@ -23,7 +23,7 @@ coursomaticApp.factory("activeUser", function(User) {
     };
 
     var isTeacher = function() {
-        if (localStorage.firstName && user.type === "teacher") {
+        if (localStorage.firstName && localStorage.type === "teacher") {
             return true;
         } else {
             return false;
@@ -35,6 +35,7 @@ coursomaticApp.factory("activeUser", function(User) {
         if (typeof(Storage) !== "undefined") {
             localStorage.firstName = loggedInUser.firstName;
             localStorage.lastName = loggedInUser.lastName;
+            localStorage.type = loggedInUser.type;
             user = loggedInUser;
         } else {
             user = loggedInUser;
@@ -43,8 +44,7 @@ coursomaticApp.factory("activeUser", function(User) {
 
     var logout = function() {
         user = null;
-        localStorage.firstName = null;
-        localStorage.lastName = null;
+        localStorage.clear();
     };
 
     var get = function() {

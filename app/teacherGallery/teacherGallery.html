@@ -1,0 +1,55 @@
+
+<!-- courses menu -->
+
+<div class="attendance-galery col-sm-3">
+  <uib-accordion close-others="true">
+    <div class="courseItem"  ng-repeat="course in courses">
+        <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed" id="'course'+{{course.id}}">
+           <img ng-src="{{course.courseUrl}}" class="img-circle course-image" />
+            {{course.name}}</button>
+         <ul class="list-group"  uib-collapse="isCollapsed">
+            <li class="list-group-item sessionItem"ng-repeat="session in course.sessionsData" ng-click="selectSession(session)"> {{session.start.getUTCDate()}} {{session.month}}</li>
+        </ul>
+    </div>
+  </uib-accordion>
+</div>
+
+
+<div class="sessionDetails col-sm-4 ng-show" id="sessionDetails">
+    <!-- buttons -->
+
+    <!-- session details pannel -->
+    <div  class="sessionDetailsItem  col-sm-12">
+        <h4>{{sessionTitle}} - {{sessionDate}} - {{sessionStart}}</h4>
+
+        <button type="button" id= "regList" class="btn btn-default" ondrop="drop(event)" ondragover="allowDrop(event)" ng-click="isCollapsedDetails = !isCollapsedDetails">Registered Students</button>
+        <ul class="list-group" uib-collapse="isCollapsedDetails">
+            <li class="list-group-item  sessionItem" ng-repeat="student in registeredStudents" >{{student}}</li>
+        </ul>
+        <button type="button" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Removed Students</button>
+        <ul class="list-group" uib-collapse="isCollapsedDetails">
+            <li class="list-group-item  sessionItem" ng-repeat="student in removedStudents" >{{student}}</li>
+        </ul>
+        <button type="button" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Added Students</button>
+        <ul class="list-group" uib-collapse="isCollapsedDetails">
+            <li class="list-group-item  sessionItem" ng-repeat="student in addedStudents" >{{student}}</li>
+        </ul>
+    </div>
+</div>
+<div class="col-sm-2">
+    <div>
+        <!--class="row col-md-9 col-md-offset-3 custyle"-->
+        <table class="table table-striped custab">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tr id = "usList" ondrop="drop(event)" ondragover="allowDrop(event)" ng-repeat="user in userList">
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

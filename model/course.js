@@ -84,8 +84,8 @@ coursomaticApp.factory("selectedCourse", function (activeUser) {
         isSelectedCourse: isSelectedCourse,
         selectCourse: selectCourse,
         get: get, 
-        addStudentToCourse: addStudentToCourse,
-        removeStudentFromCourse: removeStudentFromCourse,
+        // addStudentToCourse: addStudentToCourse,
+        // removeStudentFromCourse: removeStudentFromCourse,
         addStudentToSessionList: addStudentToSessionList,
         removeStudentFromSessionList: removeStudentFromSessionList
     };

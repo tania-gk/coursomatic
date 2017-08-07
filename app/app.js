@@ -3,12 +3,16 @@ var coursomaticApp = angular.module("coursomaticApp", ["ngRoute", "ngAnimate", "
 
 coursomaticApp.config(function($routeProvider) {
     $routeProvider
-        .when("/", {
-            templateUrl: "app/home/home.html",
-            controller: "HomeCtrl"
-        })
+         .when("/", {
+             templateUrl: "app/home/home.html",
+             controller: "HomeCtrl"
+         })
         .when("/home", {
             controller: "LoginCtrl"
+        })
+        .when("/teacherGallery", {
+            templateUrl: "app/teacherGallery/teacherGallery.html",
+            controller: "TeacherGalleryCtrl"
         })
         .when("/gallery", {
             templateUrl: "app/gallery/gallery.html",
