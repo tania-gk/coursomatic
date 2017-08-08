@@ -9,6 +9,8 @@ coursomaticApp.factory("Course", function (Session) {
             this.sessionsData = getSessions(plainObject.sessionsData, plainObject.name,plainObject.students);
             this.courseUrl = plainObject.courseUrl;
             this.maxStudents = plainObject.maxStudents;
+            this.isDisabled = false;
+            this.isCollapsed = true;
     };
 
     getSessions = function (plainObject, courseName, students) {

@@ -1,4 +1,4 @@
-coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, uiCalendarConfig, Users, Course, Courses, activeUser, allSessions, Sessions) {
+coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, Users, Course, Courses, activeUser, allSessions, Sessions) {
     $scope.isCollapsed = false;
     $scope.isCollapsedDetails = false;
     $scope.sessionDate = "";
@@ -8,7 +8,7 @@ coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, uiCa
     $scope.removedStudents = [];
     $scope.addedStudents = [];
     $scope.selectedSession = {};
-    $scope.courseFilter = "all";
+    $scope.courseFilter = "my";
 
 // code for calendar 
     $scope.events = [];
@@ -29,17 +29,17 @@ coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, uiCa
         $http.get("data/courses.json").then(function(response) {
             var coursesIndex = Object.keys(response.data);
             for (var i = 0; i < coursesIndex.length; i++) {
-                Courses.add(new Course(response.data[coursesIndex[i]], coursesIndex[i]));
+                var newCourse = new Course(response.data[coursesIndex[i]], coursesIndex[i])
+                if (activeUser.getCourseId() === newCourse.id && ($scope.courseFilter === "my" || $scope.courseFilter === "all")) {
+                    newCourse.isDisabled = false;
+                    newCourse.isCollapsed = true;
+                } else if (activeUser.getCourseId() === newCourse.id && $scope.courseFilter === "other") {
+                    newCourse.isDisabled = true;
+                    newCourse.isCollapsed = false;
+                } 
+                Courses.add(newCourse);
             }
-            $scope.events.splice(0);
-            for (var i = 0; i < allSessions.getAllSessionsArr().length; i++) {
-                $scope.events.push({
-                    "title": allSessions.getAllSessionsArr()[i].title,
-                    "start": allSessions.getAllSessionsArr()[i].start,
-                    "end": allSessions.getAllSessionsArr()[i].end
-                })
-            }
-
+  
             $scope.courses = Courses.getAll();
             $scope.allSessionsArr = allSessions.getAllSessionsArr();
             $scope.loggedUser = activeUser.get();
@@ -77,13 +77,21 @@ coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, uiCa
     $scope.userList = Users.getAllUsers();
 
     $scope.addUser = function() {
-        Sessions.addUserToSession($scope.selectedSession);
-        $scope.addedStudents = $scope.selectedSession.added;
+        if (Object.keys($scope.selectedSession).length === 0) {
+            alert("Please select Session")
+        } else {
+            Sessions.addUserToSession($scope.selectedSession);
+            $scope.addedStudents = $scope.selectedSession.added;
+    }
     }
 
     $scope.removeUser = function() {
-        Sessions.removeUserFromSession($scope.selectedSession);
-        $scope.removedStudents = $scope.selectedSession.removed;
+         if (Object.keys($scope.selectedSession).length === 0) {
+            alert("Please select Session")
+        } else {
+            Sessions.removeUserFromSession($scope.selectedSession);
+            $scope.removedStudents = $scope.selectedSession.removed;
+        }
     }
 
     $scope.sessionFilter = function() {
@@ -95,49 +103,36 @@ coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, uiCa
     $scope.filterCourses = function (filter){ //filter the courses
             switch (filter) {
             case "all":
-            var btns = document.getElementsByTagName('button');
-                for(var i=0;i<btns.length;i++){
-                    if(btns[i].id.indexOf("'course'") == 0){
-                        btns[i].id.className.splice(btns[i].className.indexOf("ng-hide",7));
-                        btns[i].id.className += " ng-show";
+                for(i=0; i< $scope.courses.length; i++) {
+                    $scope.courses[i].isDisabled = false;
+                    $scope.courses[i].isCollapsed = true;
+                }
+            break;
+            case "my":
+                for(i=0; i< $scope.courses.length; i++) {
+                    if (activeUser.getCourseId() === $scope.courses[i].name) {
+                        $scope.courses[i].isDisabled = false;
+                    } else {
+                        $scope.courses[i].isDisabled = true;
                     }
                 }
-          break;
-            case "my":
-                var btns = document.getElementsByTagName('button');
-                for(var i=0;i<btns.length;i++){
-                    if(btns[i].id.indexOf("'course'") && btns[i].id != "course"+getCourseId()){
-                        btns[i].className += " ng-hide";
+            break;
+            case "other":
+                for(i=0; i< $scope.courses.length; i++) {
+                    if (activeUser.getCourseId() === $scope.courses[i].name) {
+                        $scope.courses[i].isDisabled = true;
+                    } else {
+                        $scope.courses[i].isDisabled = false;
                     }
                 }
             break;
         }
     }
- 
 
-        //configure calendar
-    $scope.uiConfig = {
-        calendar: {
-            height: 546,
-            editable: true,
-            displayEventTime: false,
-            header: {
-                left: 'month basicWeek agendaDay',
-                center: 'title',
-                right: 'today prev,next'
-            },
-            renderEvents: function() {
-                uiCalendarConfig.calendars.myCalendar.fullCalendar('renderEvents', $scope.events, true);
-            },
-            eventClick: function(event) {
-                $scope.SelectedEvent = event;
-            },
-            eventAfterAllRender: function() {
-                if ($scope.events.length > 0 && isFirstTime) {
-                    //focus on first event
-                    uiCalendarConfig.calendars.myCalendar.fullCalendar('goToDate', $scope.events[0].start);
-                }
-            }
+    $scope.courseClick = function (course) {
+        if(!course.isDisabled) { 
+            course.isCollapsed = !course.isCollapsed
         }
     }
+ 
 });

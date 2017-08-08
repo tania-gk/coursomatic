@@ -1,8 +1,8 @@
 <!-- filter buttons -->
 <div class="btn-group col-sm-12">
-    <label class="btn btn-primary" ng-model="courseFilter" ng-click=filterCourses("all") center-block uncheckable active>All</label>
-    <label class="btn btn-primary" ng-model="courseFilter" ng-click=filterCourses("my") center-block uncheckable>My Courses</label>
-    <label class="btn btn-primary" ng-model="courseFilter" ng-click=filterCourses("other") center-block uncheckable>Other Courses</label>
+    <button class="btn btn-primary" ng-click=filterCourses("all") center-block>All</button>
+    <button class="btn btn-primary" ng-click=filterCourses("my") center-block>My Courses</button>
+    <button class="btn btn-primary" ng-click=filterCourses("other") center-block>Other Courses</button>
 </div>
 
 <!-- courses menu -->
@@ -10,10 +10,10 @@
 <div class="attendance-galery col-sm-3">
   <uib-accordion close-others="true">
     <div class="courseItem"  ng-repeat="course in courses">
-        <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed" id="'course'+{{course.id}}">
+        <button type="button" class="btn btn-default"  ng-click="courseClick(course)" ng-class="{'disabled':course.isDisabled}"  id="'course'+{{course.id}}">
            <img ng-src="{{course.courseUrl}}" class="img-circle course-image" />
             {{course.name}}</button>
-         <ul class="list-group"  uib-collapse="isCollapsed">
+         <ul class="list-group"  uib-collapse="course.isCollapsed">
             <li class="list-group-item sessionItem"ng-repeat="session in course.sessionsData" ng-click="selectSession(session)"> {{session.start.getUTCDate()}} {{session.month}}</li>
         </ul>
     </div>

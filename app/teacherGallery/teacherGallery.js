@@ -1,4 +1,4 @@
-coursomaticApp.controller("TeacherGalleryCtrl", function($scope, $http, $location, uiCalendarConfig, Users, Course, Courses, activeUser, allSessions, Sessions) {
+coursomaticApp.controller("TeacherGalleryCtrl", function($scope, $http, $location, Users, Course, Courses, activeUser, allSessions, Sessions) {
     $scope.isCollapsed = false;
     $scope.isCollapsedDetails = false;
     $scope.sessionDate = "";

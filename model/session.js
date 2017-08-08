@@ -42,19 +42,8 @@ coursomaticApp.factory("Sessions", function() {
         for (var i = 0; i < session.students.length; i++) {
             if (user.indexOf(session.students[i]) != -1) {
                 isRegistered = true;
-            } else {
-                for (var i = 0; i < session.added.length; i++) {
-                    if (user.indexOf(session.added[i]) != -1) {
-                        session.added.splice(i, 1);
-                        isInAdded = true;
-                    }
-                }
-                if (!isInAdded) {
-                    alert("User is not registered to this Course");
-                }
-            }
+            } 
         }
-
         if (isRegistered) {
             for (var j = 0; j < session.removed.length; j++) {
                 if (user.indexOf(session.removed[j]) != -1) {
@@ -62,7 +51,18 @@ coursomaticApp.factory("Sessions", function() {
                 }
             }
             session.removed.push(localStorage.firstName + " " + localStorage.lastName);
+        } else {
+            for (var i = 0; i < session.added.length; i++) {
+                if (user.indexOf(session.added[i]) != -1) {
+                   session.added.splice(i, 1);
+                   isInAdded = true;
+                }
+            }
+            if (!isInAdded) {
+                    alert("User is not registered to this Course");
+            }
         }
+
     };
 
 

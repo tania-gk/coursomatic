@@ -4,6 +4,11 @@
     font-size: 1.3em;
 }
 
+.courseItem >button {
+    display:block;
+    width: 100%;
+}
+
 img.course-image {
 /*    top: 10%;
     left: 6%;*/

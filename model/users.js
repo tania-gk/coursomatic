@@ -51,8 +51,8 @@ coursomaticApp.factory("activeUser", function(User, Courses) {
         return user;
     };
     // todo
-    var getUserCourses = function() {
-
+    var getCourseId = function() {
+        return user.courseId;
     }
 
     return {
@@ -61,7 +61,7 @@ coursomaticApp.factory("activeUser", function(User, Courses) {
         login: login,
         logout: logout,
         get: get,
-        getUserCourses: getUserCourses
+        getCourseId: getCourseId
     };
 });
 
