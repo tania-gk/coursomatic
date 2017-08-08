@@ -23,33 +23,39 @@
         <h4>{{sessionTitle}} - {{sessionDate}} - {{sessionStart}}</h4>
 
         <button type="button" id= "regList" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Registered Students</button>
-        <ul class="list-group" uib-collapse="isCollapsedDetails">
-            <li class="list-group-item  sessionItem"  ondrop="drop(event)" ondragover="allowDrop(event)" ng-repeat="student in registeredStudents" >{{student}}</li>
+        <ul class="list-group" dnd-list="list" uib-collapse="isCollapsedDetails">
+           <li ng-repeat="student in registeredStudents" 
+           class="list-group-item  sessionItem"
+            dnd-draggable="item"
+            dnd-moved="list.splice($index, 1)"
+            dnd-effect-allowed="move"
+            dnd-selected="models.selected = item"
+            ng-class="{'selected': models.selected === item}">{{student}}</li>
         </ul>
         <button type="button" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Removed Students</button>
         <ul class="list-group" uib-collapse="isCollapsedDetails">
-            <li class="list-group-item  sessionItem" ng-repeat="student in removedStudents" >{{student}}</li>
+            <li ng-repeat="student in removedStudents" class="list-group-item  sessionItem">{{student}}</li>
         </ul>
         <button type="button" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Added Students</button>
-        <ul class="list-group" uib-collapse="isCollapsedDetails">
-            <li class="list-group-item  sessionItem" ng-repeat="student in addedStudents" >{{student}}</li>
+        <ul class="list-group"  dnd-list="list" uib-collapse="isCollapsedDetails">
+            <li ng-repeat="student in addedStudents"class="list-group-item  sessionItem">
+                    {{student}}</label>
+            </li>
         </ul>
     </div>
 </div>
 <div class="col-sm-2">
     <div>
         <!--class="row col-md-9 col-md-offset-3 custyle"-->
-        <table class="table table-striped custab">
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                </tr>
-            </thead>
-            <tr id = "usList" draggable="true" ondrop="drop(event)" ondragover="allowDrop(event)" ng-repeat="user in userList">
-                <td>{{user.firstName}}</td>
-                <td>{{user.lastName}}</td>
-            </tr>
-        </table>
+        Students
+        <ul  dnd-list="list" >
+          <li id = "usList" ng-repeat="user in userList"
+            class="list-group-item  sessionItem" 
+            dnd-draggable="item"
+            dnd-moved="list.splice($index, 1)"
+            dnd-effect-allowed="move"
+            dnd-selected="models.selected = item"
+            ng-class="{'selected': models.selected === item}">{{user.firstName}} {{user.lastName}}</li>
+        </ul>
     </div>
 </div>

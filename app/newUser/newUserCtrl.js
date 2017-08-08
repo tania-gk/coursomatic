@@ -1,4 +1,14 @@
-coursomaticApp.controller("NewUserCtrl", function($scope, $http, $location, User, activeUser, Users, Course, Courses) {
+coursomaticApp.controller("NewUserCtrl", function($scope, $http, $location, $routeParams ,User, activeUser, Users, Course, Courses) {
+    $scope.title = $routeParams.firstName == undefined ? "New Student" : "Update Student";
+    $scope.buttonName = $routeParams.firstName == undefined ? "Save" : "Update";
+    
+    $scope.usrFirstName = $routeParams.firstName;
+    $scope.usrLastName = $routeParams.lastName; 
+    $scope.usrPhone = $routeParams.phone; 
+    $scope.usrCity = $routeParams.city; 
+    $scope.usrEmail = $routeParams.email; 
+    
+    
     if (!Courses.isLoaded) {
         $http.get("data/courses.json").then(function(response) {
             var coursesIndex = Object.keys(response.data);
@@ -21,7 +31,32 @@ coursomaticApp.controller("NewUserCtrl", function($scope, $http, $location, User
     }
 
     $scope.saveUser = function() {
-        Users.addUser($scope.newUser);
-        location.assign("#!/studentList")
+        if ($routeParams.firstName === undefined) {
+            Users.addUser($scope.newUser);
+        } else {
+            var userArr = Users.getAllUsers();
+            for(i=0; i<userArr.length; i++) {
+                if (userArr[i].email === $scope.usrEmail) {
+                    if($scope.newUser.firstName === undefined) {
+                        $scope.newUser.firstName = $scope.usrFirstName;
+                    }
+                    if($scope.newUser.lastName === undefined) {
+                        $scope.newUser.lastName = $scope.usrLastName;
+                    }
+                    if($scope.newUser.phone === undefined) {
+                        $scope.newUser.phone = $scope.usrPhone;
+                    }
+                    if($scope.newUser.city === undefined) {
+                        $scope.newUser.city = $scope.usrCity;
+                    }
+                    if($scope.newUser.email === undefined) {
+                        $scope.newUser.email = $scope.usrEmail;
+                    }
+                    
+                    Users.updateUser(i,$scope.newUser);
+                }
+            }
+        }
+        $location.path("/studentList");
     }
 });

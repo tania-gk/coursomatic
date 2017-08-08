@@ -1,4 +1,4 @@
-var coursomaticApp = angular.module("coursomaticApp", ["ngRoute", "ngAnimate", "ui.bootstrap", "ui.calendar"]);
+var coursomaticApp = angular.module("coursomaticApp", ["ngRoute", "ngAnimate", "ui.bootstrap", "ui.calendar","dndLists"]);
 
 
 coursomaticApp.config(function($routeProvider) {
@@ -22,6 +22,10 @@ coursomaticApp.config(function($routeProvider) {
             templateUrl: "app/newUser/newUser.html",
             controller: "NewUserCtrl"
         })
+        .when("/newStudent/:firstName/:lastName/:phone/:city/:email", {
+            templateUrl: "app/newUser/newUser.html",
+            controller: "NewUserCtrl"
+        })
         .when("/studentList", {
             templateUrl: "app/studentList/studentList.html",
             controller: "StudentListCtrl"
@@ -32,10 +36,12 @@ coursomaticApp.controller("MainCtrl", function($scope, $uibModal, $http, User, U
     /*    $scope.greetName = activeUser.get().firstName;*/
 
     $http.get("data/users.json").then(function(response) {
-        if (Users.getAllUsers().length === 0) {
+       
+        if (!Users.isLoaded) {
             for (var i = 0; i < response.data.length; i++) {
                 Users.addUser(new User(response.data[i]));
             }
+            Users.isLoaded = true;
         }
     });
 

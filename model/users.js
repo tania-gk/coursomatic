@@ -67,7 +67,8 @@ coursomaticApp.factory("activeUser", function(User, Courses) {
 
 coursomaticApp.factory("Users", function($http, User) {
     var usersArr = [];
-
+    var isLoaded = false;
+    
     var addUser = function(user) {
         usersArr.push(user);
     };
@@ -91,8 +92,8 @@ coursomaticApp.factory("Users", function($http, User) {
         return usersArr;
     }
 
-    var get = function(index) {
-        return usersArr[index];
+    var get = function(email) {
+        return usersArr[usersArr.indexOf(email)];
     }
 
 
@@ -101,6 +102,6 @@ coursomaticApp.factory("Users", function($http, User) {
         updateUser: updateUser,
         removeUser: removeUser,
         getAllUsers: getAllUsers,
-        get: get,
+        get: get
     }
 });

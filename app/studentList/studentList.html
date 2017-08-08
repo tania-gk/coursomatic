@@ -14,13 +14,13 @@
                 <th class="text-center">Action</th>
             </tr>
         </thead>
-        <tr ng-repeat="user in userList">
+        <tr ng-repeat="user in userList track by $index">
             <td>{{user.courseId}}</td>
             <td>{{user.firstName}}</td>
             <td>{{user.lastName}}</td>
             <td>{{user.phone}}</td>
             <td>{{user.email}}</td>
-            <td class="text-center"><a class='btn btn-info btn-xs' href="#!/newStudent"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+            <td class="text-center"><a class='btn btn-info btn-xs' href="#!/newStudent/{{user.firstName}}/{{user.lastName}}/{{user.phone}}/{{user.city}}/{{user.email}}"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#!/studentList" class="btn btn-danger btn-xs" ng-click="removeUser(user)"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
         </tr>
     </table>
 </div>
