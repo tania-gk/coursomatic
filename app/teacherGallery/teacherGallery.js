@@ -11,6 +11,7 @@ coursomaticApp.controller("TeacherGalleryCtrl", function($scope, $http, $locatio
     $scope.courseFilter = "all";
 
     $scope.activeCourse = {};
+    $scope.greetingUser = localStorage.firstName;
 
 
     if (!Courses.isLoaded) {

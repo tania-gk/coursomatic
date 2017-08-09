@@ -10,6 +10,8 @@ coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, User
     $scope.selectedSession = {};
     $scope.courseFilter = "my";
 
+    $scope.greetingUser = localStorage.firstName;
+
 // code for calendar 
     $scope.events = [];
     $scope.SelectedEvent;

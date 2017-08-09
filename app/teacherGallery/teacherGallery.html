@@ -16,7 +16,7 @@
 
 <div class="sessionDetails col-sm-4 ng-show" id="sessionDetails">
     <!-- buttons -->
-
+    <h3>Hello {{greetingUser}}</h3>
     <!-- session details pannel -->
     <div  class="sessionDetailsItem  col-sm-12">
         <h4>{{sessionTitle}} - {{sessionDate}} - {{sessionStart}}</h4>
@@ -26,11 +26,11 @@
            <li ng-repeat="student in registeredStudents  track by $index" 
            class="list-group-item  sessionItem">{{student}}</li>
         </ul>
-        <button type="button" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Removed Students</button>
+        <button type="button" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Removed from Session</button>
         <ul class="list-group" uib-collapse="isCollapsedDetails">
             <li ng-repeat="student in removedStudents" class="list-group-item  sessionItem">{{student}}</li>
         </ul>
-        <button type="button" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Added Students</button>
+        <button type="button" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Added to Session</button>
         <ul class="list-group"  dnd-list="list" uib-collapse="isCollapsedDetails">
             <li ng-repeat="student in addedStudents"class="list-group-item  sessionItem">
                     {{student}}</label>
