@@ -45,14 +45,14 @@ coursomaticApp.factory("selectedCourse", function (activeUser) {
 
     var addStudentToCourse = function (selectedCourse, student){
         if (selectedCourse.students.length < selectedCourse.maxStudents) {
-            selectedCourse.students.push(student.id);
+            selectedCourse.students.push(student.firstName + " " + student.lastName);
         } else {
             alert("selectedCourse.get().name" + " is full");
         }
     };
 
     var removeStudentFromCourse = function (selectedCourse, student){
-        var index = selectedCourse.students.indexOf(student.id);
+        var index = selectedCourse.students.indexOf(student);
         if (index != -1) {
             selectedCourse.students.splice(index,1);
         } else {
@@ -66,7 +66,7 @@ coursomaticApp.factory("selectedCourse", function (activeUser) {
             (selectedCourse.students.length === selectedCourse.maxStudents 
                 &&  selectedCourse.sessionsData[sessionId].removed.length > 0 
                 && selectedCourse.sessionsData[sessionId].removed.length > selectedCourse.sessionsData[sessionId].added.length)) {
-                    selectedCourse.sessionsData[sessionId].added.push(student.id);
+                    selectedCourse.sessionsData[sessionId].added.push(student);
         } else {
             alert("There is no free spot in this session of " + selectedCourse.name);
         }
@@ -75,7 +75,7 @@ coursomaticApp.factory("selectedCourse", function (activeUser) {
     var removeStudentFromSessionList = function (selectedCourse, student, sessionId) {
 
         if (selectedCourse.students.indexOf(student.id) != -1) {
-                    selectedCourse.sessionsData[sessionId].removed.push(student.id);
+                    selectedCourse.sessionsData[sessionId].removed.push(student);
         } else {
             alert(student.firstName + " is not registered to " + selectedCourse.name + " Course");
         }
@@ -86,14 +86,14 @@ coursomaticApp.factory("selectedCourse", function (activeUser) {
         isSelectedCourse: isSelectedCourse,
         selectCourse: selectCourse,
         get: get, 
-        // addStudentToCourse: addStudentToCourse,
-        // removeStudentFromCourse: removeStudentFromCourse,
+        addStudentToCourse: addStudentToCourse,
+        removeStudentFromCourse: removeStudentFromCourse,
         addStudentToSessionList: addStudentToSessionList,
         removeStudentFromSessionList: removeStudentFromSessionList
     };
 });
 
-coursomaticApp.factory("Courses", function (Course) {
+coursomaticApp.factory("Courses", function (Course, User) {
     var coursesList = [];
     var isLoaded = false;
 

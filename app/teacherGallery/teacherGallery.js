@@ -1,4 +1,4 @@
-coursomaticApp.controller("TeacherGalleryCtrl", function($scope, $http, $location, Users, Course, Courses, activeUser, allSessions, Sessions) {
+coursomaticApp.controller("TeacherGalleryCtrl", function($scope, $http, $location, Users, Course, Courses, activeUser, allSessions, Sessions, selectedCourse) {
     $scope.isCollapsed = false;
     $scope.isCollapsedDetails = false;
     $scope.sessionDate = "";
@@ -9,6 +9,8 @@ coursomaticApp.controller("TeacherGalleryCtrl", function($scope, $http, $locatio
     $scope.addedStudents = [];
     $scope.selectedSession = {};
     $scope.courseFilter = "all";
+
+    $scope.activeCourse = {};
 
 
     if (!Courses.isLoaded) {
@@ -28,7 +30,12 @@ coursomaticApp.controller("TeacherGalleryCtrl", function($scope, $http, $locatio
         $scope.loggedUser = localStorage.loggedInUser;
    }
 
-   
+   $scope.selectCourse = function(course) {
+       $scope.isCollapsed = !$scope.isCollapsed;
+       $scope.activeCourse = course;
+       $scope.sessionTitle = course.name;
+       $scope.registeredStudents = course.students;
+   }
 
     $scope.selectSession = function(session) {
         $scope.sessionTitle = session.title;
@@ -42,34 +49,24 @@ coursomaticApp.controller("TeacherGalleryCtrl", function($scope, $http, $locatio
     
     $scope.userList = Users.getAllUsers();
 
-    $scope.addUser = function() {
-        Sessions.addUserToSession($scope.selectedSession);
+    $scope.addToRegistered = function(user){
+        selectedCourse.addStudentToCourse($scope.activeCourse,user);
+    }
+
+    $scope.addUser = function(user) {
+        Sessions.teacherAddUserToSession($scope.selectedSession,user);
         $scope.addedStudents = $scope.selectedSession.added;
     }
 
-    $scope.removeUser = function() {
-        Sessions.removeUserFromSession($scope.selectedSession);
-        $scope.removedStudents = $scope.selectedSession.removed;
+    $scope.removeUser = function(user) {
+        Sessions.teacherRemoveUserFromSession($scope.selectedSession,user);
     }
 
     $scope.sessionFilter = function() {
             var course = document.getElementById('selCourse');
             var courseName = course.getElementsByTagName('h4').innerHTML;
             return sessionStorage.title === courseName;
-        }
+    }
 
-    // $scope.allowD = function (ev) {
-    //     ev.preventDefault();
-    // }
-
-    // $scope.drag = function (ev) {
-    //     ev.dataTransfer.setData("text", ev.target.id);
-    // }
-
-    // $scope.drop = function (ev) {
-    //     ev.preventDefault();
-    //     var data = ev.dataTransfer.getData("text");
-    //     ev.target.appendChild(document.getElementById(data));
-    // }
-
+    
 });

@@ -14,7 +14,7 @@ coursomaticApp.factory("Session", function(Users, User) {
     return Session;
 });
 
-coursomaticApp.factory("Sessions", function() {
+coursomaticApp.factory("Sessions", function(User, Session) {
     var addUserToSession = function(session) {
         var user = localStorage.firstName + " " + localStorage.lastName;
         var isRegistered = false;
@@ -62,14 +62,75 @@ coursomaticApp.factory("Sessions", function() {
                     alert("User is not registered to this Course");
             }
         }
+    }
+
+    var teacherRemoveUserFromSession = function(session,userSelected) {
+        var user = userSelected.firstName +" "+ userSelected.lastName;
+        var isRegistered = false;
+        var isInAdded = false;
+
+        for (var i = 0; i < session.students.length; i++) {
+            if (user.indexOf(session.students[i]) != -1) {
+                isRegistered = true;
+            } 
+        }
+        if (isRegistered) {
+            for (var j = 0; j < session.removed.length; j++) {
+                if (user.indexOf(session.removed[j]) != -1) {
+                    session.removed.splice(j, 1);
+                }
+            }
+            session.removed.push(user);
+        } else {
+            for (var i = 0; i < session.added.length; i++) {
+                if (user.indexOf(session.added[i]) != -1) {
+                   session.added.splice(i, 1);
+                   isInAdded = true;
+                }
+            }
+            if (!isInAdded) {
+                    alert("User is not registered to this Course");
+            }
+        }
 
     };
 
+    var teacherAddUserToSession = function(session, userSelected) {
+        var user =  userSelected.firstName +" "+ userSelected.lastName;
+        var isRegistered = false;
+        var isInAdded = false;
+
+        for (var i = 0; i < session.students.length; i++) {
+            if (user.indexOf(session.students[i]) != -1) {
+                isRegistered = true;
+                for(var j=0; j<session.removed.length; j++ ){
+                    if(session.removed[j] === user){
+                        session.removed.splice(j,1);
+                        isInAdded = true;                        
+                    }
+                } 
+              }
+        }
+        if (isRegistered && !isInAdded){
+            alert("User already registered to this Course");
+        }
+
+        if (!isRegistered) {
+            for (var i = 0; i < session.added.length; i++) {
+                if (user.indexOf(session.added[i]) != -1) {
+                    session.added.splice(i, 1);
+                }
+            }
+            session.added.push(user);
+        }
+    };
 
     
     return {
         addUserToSession: addUserToSession,
-        removeUserFromSession: removeUserFromSession
+        removeUserFromSession: removeUserFromSession,
+        teacherRemoveUserFromSession: teacherRemoveUserFromSession,
+        teacherAddUserToSession:teacherAddUserToSession
     }
 });
 

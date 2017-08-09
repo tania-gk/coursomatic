@@ -13,12 +13,6 @@ coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, User
 // code for calendar 
     $scope.events = [];
     $scope.SelectedEvent;
-    $scope.eventSources = [{
-        events: $scope.events,
-        color: '#428bca',
-        textColor: 'white',
-        overlap: false
-    }];
 
     var isFirstTime = true;
 // end code for calendar
@@ -70,8 +64,6 @@ coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, User
         $scope.removedStudents = session.removed;
         $scope.addedStudents = session.added;
         $scope.selectedSession = session;
-        // document.getElementById("sessionDetails").className.splice(document.getElementById("sessionDetails").className.indexOf("ng-hide", 7));
-        // document.getElementById("sessionDetails").className.concat("ng-show");
     }
 
     $scope.userList = Users.getAllUsers();

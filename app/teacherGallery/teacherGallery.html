@@ -1,10 +1,9 @@
-
 <!-- courses menu -->
 
 <div class="attendance-galery col-sm-3">
   <uib-accordion close-others="true">
     <div class="courseItem"  ng-repeat="course in courses">
-        <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed" id="'course'+{{course.id}}">
+        <button type="button" class="btn btn-default" ng-click="selectCourse(course)" id="'course'+{{course.id}}">
            <img ng-src="{{course.courseUrl}}" class="img-circle course-image" />
             {{course.name}}</button>
          <ul class="list-group"  uib-collapse="isCollapsed">
@@ -24,13 +23,8 @@
 
         <button type="button" id= "regList" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Registered Students</button>
         <ul class="list-group" dnd-list="list" uib-collapse="isCollapsedDetails">
-           <li ng-repeat="student in registeredStudents" 
-           class="list-group-item  sessionItem"
-            dnd-draggable="item"
-            dnd-moved="list.splice($index, 1)"
-            dnd-effect-allowed="move"
-            dnd-selected="models.selected = item"
-            ng-class="{'selected': models.selected === item}">{{student}}</li>
+           <li ng-repeat="student in registeredStudents  track by $index" 
+           class="list-group-item  sessionItem">{{student}}</li>
         </ul>
         <button type="button" class="btn btn-default" ng-click="isCollapsedDetails = !isCollapsedDetails">Removed Students</button>
         <ul class="list-group" uib-collapse="isCollapsedDetails">
@@ -44,18 +38,18 @@
         </ul>
     </div>
 </div>
-<div class="col-sm-2">
+<div class="col-sm-4">
     <div>
         <!--class="row col-md-9 col-md-offset-3 custyle"-->
         Students
-        <ul  dnd-list="list" >
+        <ul>
           <li id = "usList" ng-repeat="user in userList"
-            class="list-group-item  sessionItem" 
-            dnd-draggable="item"
-            dnd-moved="list.splice($index, 1)"
-            dnd-effect-allowed="move"
-            dnd-selected="models.selected = item"
-            ng-class="{'selected': models.selected === item}">{{user.firstName}} {{user.lastName}}</li>
+            class="list-group-item  sessionItem">
+            {{user.firstName}} {{user.lastName}}
+                <a class='btn btn-info btn-xs btn-teacher' ng-click="addUser(user)"><span class="glyphicon glyphicon-plus"></span> Add</a> 
+                <a class='btn btn-info btn-xs btn-teacher' ng-click="removeUser(user)"><span class="glyphicon glyphicon-remove"></span> Remove</a> 
+                <a class='btn btn-info btn-xs btn-teacher' ng-click="addToRegistered(user)"><span class="glyphicon glyphicon-ok"></span> Register</a>
+            </li>
         </ul>
     </div>
 </div>
