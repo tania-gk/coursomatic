@@ -3,3 +3,15 @@
     float: right;
     margin-left: 0.4em;
 }
+
+.btn-teacher-remove {
+    background-color: #a64dff;
+}
+
+.btn-teacher-add{
+    background-color: #e066ff;
+}
+
+.btn-teacher-register{
+    background-color: #4d94ff;
+}
