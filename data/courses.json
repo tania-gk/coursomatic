@@ -2,7 +2,7 @@
     "001": {
         "name": "Monday Morning",
         "desc": "10:00-13:30",
-        "students": ["Michal Elmaliah"],
+        "students": ["Michal Elmaliah", "Tania Gabbay"],
         "sessionsData": {
             "1001": { "StartAt": "2017-10-23T10:00", "EndAt": "2017-10-23T13:30", "added": [], "removed": [] },
             "1002": { "StartAt": "2017-10-30T10:00", "EndAt": "2017-10-30T13:30", "added": [], "removed": [] },

@@ -165,5 +165,17 @@
         "type": "student",
         "courseId": "Thursday Morning",
         "clipartUrl": "birds/owl6.jpg"
+    },
+    {
+        "id": "14",
+        "firstName": "Tania",
+        "lastName": "Gabbay",
+        "phone": "0512345678",
+        "city": "Holon",
+        "email": "t@gmail.com",
+        "password": "11111",
+        "type": "student",
+        "courseId": "Monday Morning",
+        "clipartUrl": "birds/owl6.jpg"
     }
 ]
