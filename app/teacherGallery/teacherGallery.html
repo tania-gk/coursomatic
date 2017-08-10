@@ -6,7 +6,7 @@
         <button type="button" class="btn btn-default" ng-click="selectCourse(course)" id="'course'+{{course.id}}">
            <img ng-src="{{course.courseUrl}}" class="img-circle course-image" />
             {{course.name}}</button>
-         <ul class="list-group"  uib-collapse="isCollapsed">
+         <ul class="list-group"  uib-collapse="course.isCollapsed">
             <li class="list-group-item sessionItem"ng-repeat="session in course.sessionsData" ng-click="selectSession(session)"> {{session.start.getUTCDate()}} {{session.month}}</li>
         </ul>
     </div>

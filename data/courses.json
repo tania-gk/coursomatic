@@ -43,7 +43,7 @@
         "students": ["Loren Mizrahi", "Eti Levanon", "Anat Gur"],
         "sessionsData": {
             "3001": { "StartAt": "2017-10-24T10:00", "EndAt": "2017-10-24T13:30", "added": [], "removed": [] },
-            "3002": { "StartAt": "2017-10-24T10:00", "EndAt": "2017-10-24T13:30", "added": [], "removed": [] },
+            "3002": { "StartAt": "2017-10-31T10:00", "EndAt": "2017-10-31T13:30", "added": [], "removed": [] },
             "3003": { "StartAt": "2017-11-07T10:00", "EndAt": "2017-11-07T13:30", "added": [], "removed": [] },
             "3004": { "StartAt": "2017-11-14T10:00", "EndAt": "2017-11-14T13:30", "added": [], "removed": [] },
             "3005": { "StartAt": "2017-11-21T10:00", "EndAt": "2017-11-21T13:30", "added": [], "removed": [] },

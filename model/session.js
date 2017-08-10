@@ -18,19 +18,30 @@ coursomaticApp.factory("Sessions", function(User, Session) {
     var addUserToSession = function(session) {
         var user = localStorage.firstName + " " + localStorage.lastName;
         var isRegistered = false;
+        var isInAdded = false;
+
         for (var i = 0; i < session.students.length; i++) {
             if (user.indexOf(session.students[i]) != -1) {
                 isRegistered = true;
-                alert("User already registered to this Course");
-            }
+                for(var j=0; j<session.removed.length; j++ ){
+                    if(session.removed[j] === user){
+                        session.removed.splice(j,1);
+                        isInAdded = true;                        
+                    }
+                } 
+              }
         }
+        if (isRegistered && !isInAdded){
+            alert("User already registered to this Course");
+        }
+
         if (!isRegistered) {
             for (var i = 0; i < session.added.length; i++) {
                 if (user.indexOf(session.added[i]) != -1) {
                     session.added.splice(i, 1);
                 }
             }
-            session.added.push(localStorage.firstName + " " + localStorage.lastName);
+            session.added.push(user);
         }
     };
 
@@ -50,7 +61,7 @@ coursomaticApp.factory("Sessions", function(User, Session) {
                     session.removed.splice(j, 1);
                 }
             }
-            session.removed.push(localStorage.firstName + " " + localStorage.lastName);
+            session.removed.push(user);
         } else {
             for (var i = 0; i < session.added.length; i++) {
                 if (user.indexOf(session.added[i]) != -1) {

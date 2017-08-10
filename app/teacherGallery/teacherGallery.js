@@ -1,5 +1,4 @@
 coursomaticApp.controller("TeacherGalleryCtrl", function($scope, $http, $location, Users, Course, Courses, activeUser, allSessions, Sessions, selectedCourse) {
-    $scope.isCollapsed = false;
     $scope.isCollapsedDetails = false;
     $scope.sessionDate = "";
     $scope.sessionTitle = "";
@@ -18,8 +17,11 @@ coursomaticApp.controller("TeacherGalleryCtrl", function($scope, $http, $locatio
         $http.get("data/courses.json").then(function(response) {
             var coursesIndex = Object.keys(response.data);
             for (var i = 0; i < coursesIndex.length; i++) {
-                Courses.add(new Course(response.data[coursesIndex[i]], coursesIndex[i]));
-            }
+                var newCourse = new Course(response.data[coursesIndex[i]], coursesIndex[i])
+                newCourse.isDisabled = false;
+                newCourse.isCollapsed = true;
+                Courses.add(newCourse);
+           }
             $scope.courses = Courses.getAll();
             $scope.allSessionsArr = allSessions.getAllSessionsArr();
             $scope.loggedUser = activeUser.get();
@@ -32,7 +34,10 @@ coursomaticApp.controller("TeacherGalleryCtrl", function($scope, $http, $locatio
    }
 
    $scope.selectCourse = function(course) {
-       $scope.isCollapsed = !$scope.isCollapsed;
+       for (var i=0 ; i< $scope.courses.length ; i++)
+       if ($scope.courses[i] === course){
+            $scope.courses[i].isCollapsed = !$scope.courses[i].isCollapsed;
+        }
        $scope.activeCourse = course;
        $scope.sessionTitle = course.name;
        $scope.registeredStudents = course.students;
@@ -68,6 +73,5 @@ coursomaticApp.controller("TeacherGalleryCtrl", function($scope, $http, $locatio
             var courseName = course.getElementsByTagName('h4').innerHTML;
             return sessionStorage.title === courseName;
     }
-
     
 });

@@ -108,6 +108,7 @@ coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, User
                         $scope.courses[i].isDisabled = false;
                     } else {
                         $scope.courses[i].isDisabled = true;
+                        $scope.courses[i].isCollapsed = true;
                     }
                 }
             break;
@@ -115,7 +116,8 @@ coursomaticApp.controller("GalleryCtrl", function($scope, $http, $location, User
                 for(i=0; i< $scope.courses.length; i++) {
                     if (activeUser.getCourseId() === $scope.courses[i].name) {
                         $scope.courses[i].isDisabled = true;
-                    } else {
+                        $scope.courses[i].isCollapsed = true;
+                   } else {
                         $scope.courses[i].isDisabled = false;
                     }
                 }
