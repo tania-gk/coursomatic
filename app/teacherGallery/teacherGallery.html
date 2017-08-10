@@ -45,9 +45,9 @@
           <li id = "usList" ng-repeat="user in userList"
             class="list-group-item  sessionItem">
             {{user.firstName}} {{user.lastName}}
-                <a class='btn btn-info btn-xs btn-teacher btn-teacher-add' ng-click="addUser(user)"><span class="glyphicon glyphicon-plus"></span> Add</a> 
-                <a class='btn btn-info btn-xs btn-teacher btn-teacher-remove' ng-click="removeUser(user)"><span class="glyphicon glyphicon-remove"></span> Remove</a> 
-                <a class='btn btn-info btn-xs btn-teacher btn-teacher-register' ng-click="addToRegistered(user)"><span class="glyphicon glyphicon-ok"></span> Register</a>
+                <a class='btn btn-info btn-xs btn-teacher btn-teacher-add' ng-click="addUser(user)"><span class="fa fa-user-plus"></span> Add</a> 
+                <a class='btn btn-info btn-xs btn-teacher btn-teacher-remove' ng-click="removeUser(user)"><span class="fa fa-user-times"></span> Remove</a> 
+                <a class='btn btn-info btn-xs btn-teacher btn-teacher-register' ng-click="addToRegistered(user)"><span class="fa fa-users"></span> Register</a>
             </li>
         </ul>
     </div>
