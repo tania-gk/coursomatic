@@ -27,7 +27,11 @@ coursomaticApp.controller("NewUserCtrl", function($scope, $http, $location, $rou
     $scope.newUser = new User({});
 
     $scope.cancel = function() {
-        $location.path("/gallery");
+        if ($routeParams.firstName === undefined) {
+            $location.path("/gallery");
+        } else {
+            $location.path("/studentList");
+        }
     }
 
     $scope.saveUser = function() {
