@@ -1,4 +1,4 @@
-coursomaticApp.controller("NewUserCtrl", function($scope, $http, $location, $routeParams, User, activeUser, Users, Course, Courses) {
+coursomaticApp.controller("NewUserCtrl", function($scope, $http, $location, $routeParams, User, activeUser, Users, Course, Courses, selectedCourse) {
     $scope.title = $routeParams.firstName == undefined ? "New Student" : "Update Student";
     $scope.buttonName = $routeParams.firstName == undefined ? "Save" : "Update";
 
@@ -62,14 +62,15 @@ coursomaticApp.controller("NewUserCtrl", function($scope, $http, $location, $rou
             }
         }
         for (i = 0; i < courses.length; i++) {
-            if (courses[i].name === $scope.newUser.courseId) {
-                for (j = 0; j < courses[i].students.length; j++) {
-                    if (courses[i].students[j] === newUser.firstName + " " + newUser.lastName) {
+            if ($scope.courses[i].name === $scope.newUser.courseId) {
+                for (j = 0; j < $scope.courses[i].students.length; j++) {
+                    if ($scope.courses[i].students[j] === newUser.firstName + " " + newUser.lastName) {
                         isUserRegistered = true;
                     }
                 }
                 if (!isUserRegistered) {
-                    courses[i].students.push(newUser.firstName + " " + newUser.lastName);
+                    //   $scope.courses[i].students.push(newUser.firstName + " " + newUser.lastName);
+                    selectedCourse.addStudentToCourse(Courses.get(i), newUser);
                 }
             }
         }
