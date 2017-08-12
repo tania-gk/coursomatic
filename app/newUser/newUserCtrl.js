@@ -1,14 +1,14 @@
-coursomaticApp.controller("NewUserCtrl", function($scope, $http, $location, $routeParams ,User, activeUser, Users, Course, Courses) {
+coursomaticApp.controller("NewUserCtrl", function($scope, $http, $location, $routeParams, User, activeUser, Users, Course, Courses) {
     $scope.title = $routeParams.firstName == undefined ? "New Student" : "Update Student";
     $scope.buttonName = $routeParams.firstName == undefined ? "Save" : "Update";
-    
+
     $scope.usrFirstName = $routeParams.firstName;
-    $scope.usrLastName = $routeParams.lastName; 
-    $scope.usrPhone = $routeParams.phone; 
-    $scope.usrCity = $routeParams.city; 
-    $scope.usrEmail = $routeParams.email; 
-    
-    
+    $scope.usrLastName = $routeParams.lastName;
+    $scope.usrPhone = $routeParams.phone;
+    $scope.usrCity = $routeParams.city;
+    $scope.usrEmail = $routeParams.email;
+
+
     if (!Courses.isLoaded) {
         $http.get("data/courses.json").then(function(response) {
             var coursesIndex = Object.keys(response.data);
@@ -35,29 +35,41 @@ coursomaticApp.controller("NewUserCtrl", function($scope, $http, $location, $rou
     }
 
     $scope.saveUser = function() {
+        var isUserRegistered = false;
         if ($routeParams.firstName === undefined) {
             Users.addUser($scope.newUser);
         } else {
             var userArr = Users.getAllUsers();
-            for(i=0; i<userArr.length; i++) {
+            for (i = 0; i < userArr.length; i++) {
                 if (userArr[i].email === $scope.usrEmail) {
-                    if($scope.newUser.firstName === undefined) {
+                    if ($scope.newUser.firstName === undefined) {
                         $scope.newUser.firstName = $scope.usrFirstName;
                     }
-                    if($scope.newUser.lastName === undefined) {
+                    if ($scope.newUser.lastName === undefined) {
                         $scope.newUser.lastName = $scope.usrLastName;
                     }
-                    if($scope.newUser.phone === undefined) {
+                    if ($scope.newUser.phone === undefined) {
                         $scope.newUser.phone = $scope.usrPhone;
                     }
-                    if($scope.newUser.city === undefined) {
+                    if ($scope.newUser.city === undefined) {
                         $scope.newUser.city = $scope.usrCity;
                     }
-                    if($scope.newUser.email === undefined) {
+                    if ($scope.newUser.email === undefined) {
                         $scope.newUser.email = $scope.usrEmail;
                     }
-                    
-                    Users.updateUser(i,$scope.newUser);
+                    Users.updateUser(i, $scope.newUser);
+                }
+            }
+        }
+        for (i = 0; i < courses.length; i++) {
+            if (courses[i].name === $scope.newUser.courseId) {
+                for (j = 0; j < courses[i].students.length; j++) {
+                    if (courses[i].students[j] === newUser.firstName + " " + newUser.lastName) {
+                        isUserRegistered = true;
+                    }
+                }
+                if (!isUserRegistered) {
+                    courses[i].students.push(newUser.firstName + " " + newUser.lastName);
                 }
             }
         }
