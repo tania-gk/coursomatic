@@ -1,49 +1,49 @@
 //service constructor
-coursomaticApp.factory("Course", function (Session) {
+coursomaticApp.factory("Course", function(Session) {
     function Course(plainObject, index) {
-            this.id = index;
-            this.name = plainObject.name;
-            this.desc = plainObject.desc;
-            this.dates = plainObject.dates;
-            this.students = plainObject.students;
-            this.sessionsData = getSessions(plainObject.sessionsData, plainObject.name,plainObject.students);
-            this.courseUrl = plainObject.courseUrl;
-            this.maxStudents = plainObject.maxStudents;
-            this.isDisabled = false;
-            this.isCollapsed = true;
+        this.id = index;
+        this.name = plainObject.name;
+        this.desc = plainObject.desc;
+        this.dates = plainObject.dates;
+        this.students = plainObject.students;
+        this.sessionsData = getSessions(plainObject.sessionsData, plainObject.name, plainObject.students);
+        this.courseUrl = plainObject.courseUrl;
+        this.maxStudents = plainObject.maxStudents;
+        this.isDisabled = false;
+        this.isCollapsed = true;
     };
 
-    getSessions = function (plainObject, courseName, students) {
+    getSessions = function(plainObject, courseName, students) {
         var sessions = [];
         var sessionsIndex = Object.keys(plainObject);
         for (var i = 0; i < sessionsIndex.length; i++) {
-           sessions.push(new Session(plainObject[sessionsIndex[i]],sessionsIndex[i],courseName, students));
+            sessions.push(new Session(plainObject[sessionsIndex[i]], sessionsIndex[i], courseName, students));
         }
-       return sessions;
+        return sessions;
     };
 
     return Course;
- });
+});
 
 
 
- // Service that manages courses
-coursomaticApp.factory("selectedCourse", function (activeUser) {
+// Service that manages courses
+coursomaticApp.factory("selectedCourse", function(activeUser) {
     var course = null;
 
-    var isSelectedCourse = function () {
+    var isSelectedCourse = function() {
         return course ? true : false;
     };
 
-    var selectCourse = function (selectedCourse) {
+    var selectCourse = function(selectedCourse) {
         course = selectedCourse;
     };
 
-    var get = function () {
+    var get = function() {
         return course;
     };
 
-    var addStudentToCourse = function (selectedCourse, student){
+    var addStudentToCourse = function(selectedCourse, student) {
         if (selectedCourse.students.length < selectedCourse.maxStudents) {
             selectedCourse.students.push(student.firstName + " " + student.lastName);
         } else {
@@ -51,31 +51,31 @@ coursomaticApp.factory("selectedCourse", function (activeUser) {
         }
     };
 
-    var removeStudentFromCourse = function (selectedCourse, student){
+    var removeStudentFromCourse = function(selectedCourse, student) {
         var index = selectedCourse.students.indexOf(student);
         if (index != -1) {
-            selectedCourse.students.splice(index,1);
+            selectedCourse.students.splice(index, 1);
         } else {
             alert("student.name" + " is not in registered to this course");
         }
     };
 
-    var addStudentToSessionList = function (selectedCourse, student, sessionId) {
+    var addStudentToSessionList = function(selectedCourse, student, sessionId) {
 
-        if (selectedCourse.students.length < selectedCourse.maxStudents || 
-            (selectedCourse.students.length === selectedCourse.maxStudents 
-                &&  selectedCourse.sessionsData[sessionId].removed.length > 0 
-                && selectedCourse.sessionsData[sessionId].removed.length > selectedCourse.sessionsData[sessionId].added.length)) {
-                    selectedCourse.sessionsData[sessionId].added.push(student);
+        if (selectedCourse.students.length < selectedCourse.maxStudents ||
+            (selectedCourse.students.length === selectedCourse.maxStudents &&
+                selectedCourse.sessionsData[sessionId].removed.length > 0 &&
+                selectedCourse.sessionsData[sessionId].removed.length > selectedCourse.sessionsData[sessionId].added.length)) {
+            selectedCourse.sessionsData[sessionId].added.push(student);
         } else {
             alert("There is no free spot in this session of " + selectedCourse.name);
         }
     };
 
-    var removeStudentFromSessionList = function (selectedCourse, student, sessionId) {
+    var removeStudentFromSessionList = function(selectedCourse, student, sessionId) {
 
         if (selectedCourse.students.indexOf(student.id) != -1) {
-                    selectedCourse.sessionsData[sessionId].removed.push(student);
+            selectedCourse.sessionsData[sessionId].removed.push(student);
         } else {
             alert(student.firstName + " is not registered to " + selectedCourse.name + " Course");
         }
@@ -85,7 +85,7 @@ coursomaticApp.factory("selectedCourse", function (activeUser) {
     return {
         isSelectedCourse: isSelectedCourse,
         selectCourse: selectCourse,
-        get: get, 
+        get: get,
         addStudentToCourse: addStudentToCourse,
         removeStudentFromCourse: removeStudentFromCourse,
         addStudentToSessionList: addStudentToSessionList,
@@ -93,11 +93,11 @@ coursomaticApp.factory("selectedCourse", function (activeUser) {
     };
 });
 
-coursomaticApp.factory("Courses", function (Course, User) {
+coursomaticApp.factory("Courses", function(Course, User) {
     var coursesList = [];
     var isLoaded = false;
 
-    var add = function (course) {
+    var add = function(course) {
         coursesList.push(course);
     }
 
@@ -106,18 +106,18 @@ coursomaticApp.factory("Courses", function (Course, User) {
     }
 
     var get = function(index) {
-        for (var i=0; i < coursesList.length; i++) {
-            if (coursesList[i].id === index) {
-                return coursesList[i];
-            }
-        }
-        return null;
+        //    for (var i=0; i < coursesList.length; i++) {
+        //        if (coursesList[i].id === index) {
+        return coursesList[index];
+        //        }
+        //    }
+        //    return null;
     }
 
     var remove = function(course) {
-        for (var i=0; i < coursesList.length; i++) {
+        for (var i = 0; i < coursesList.length; i++) {
             if (coursesList[i].id === index) {
-                coursesList.splice(i,1);
+                coursesList.splice(i, 1);
             }
         }
     }
@@ -127,10 +127,10 @@ coursomaticApp.factory("Courses", function (Course, User) {
     }
 
     return {
-        add : add,
-        get : get,
-        getAll : getAll,
-        remove : remove
+        add: add,
+        get: get,
+        getAll: getAll,
+        remove: remove
     }
-    
+
 });
