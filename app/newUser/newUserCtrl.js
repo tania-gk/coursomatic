@@ -61,16 +61,16 @@ coursomaticApp.controller("NewUserCtrl", function($scope, $http, $location, $rou
                 }
             }
         }
-        for (i = 0; i < courses.length; i++) {
+        for (i = 0; i < $scope.courses.length; i++) {
             if ($scope.courses[i].name === $scope.newUser.courseId) {
                 for (j = 0; j < $scope.courses[i].students.length; j++) {
-                    if ($scope.courses[i].students[j] === newUser.firstName + " " + newUser.lastName) {
+                    if ($scope.courses[i].students[j] === $scope.newUser.firstName + " " + $scope.newUser.lastName) {
                         isUserRegistered = true;
                     }
                 }
                 if (!isUserRegistered) {
                     //   $scope.courses[i].students.push(newUser.firstName + " " + newUser.lastName);
-                    selectedCourse.addStudentToCourse(Courses.get(i), newUser);
+                    selectedCourse.addStudentToCourse(Courses.get(i), $scope.newUser);
                 }
             }
         }
